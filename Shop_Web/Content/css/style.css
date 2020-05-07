@@ -45,7 +45,30 @@ a,span,label,i,p,div{font-weight: normal !important}
 .detail-product > div:after,.basket-style .tbl-head ul:after,
 .basket-style .tbl-body ul:after,.basket-style .tbl-body ul li:first-child:after{display: block; clear: both; content: ''; visibility: hidden; height: 0; line-height: 0}
 
-.top-nav{
+.banner-layer {
+    direction: rtl;
+    width: 100%;
+    height: 50px;
+    background: #eb827c;
+}
+.banner-layer a {
+    width: 100%;
+    display: block;
+    font-size: 20px;
+}
+.banner-text {
+    width: 100%;
+    text-align: center;
+    color: black;
+}
+.banner_empty {
+    direction: rtl;
+    width: 100%;
+    height: 7px;
+    background: #eb827c;
+}
+
+.top-nav {
     border-bottom: 1px solid #dfdfdf;
     background-color: #fff;
     position: relative;
