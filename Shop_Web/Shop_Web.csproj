@@ -116,6 +116,7 @@
     <Content Include="Content\fonts\yekanweb.svg" />
     <Content Include="Content\img\1.jpg" />
     <Content Include="Content\img\2.jpg" />
+    <Content Include="Content\img\arad.png" />
     <Content Include="Content\img\avatar.jpg" />
     <Content Include="Content\img\bg.jpg" />
     <Content Include="Content\img\img.jpg" />
@@ -123,6 +124,7 @@
     <Content Include="Content\img\phone.png" />
     <Content Include="Content\img\shop.png" />
     <Content Include="Content\img\slider.jpg" />
+    <Content Include="Content\img\wonder_.png" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\carousel.js" />
     <Content Include="Content\js\jquery-v1.11.3.js" />
