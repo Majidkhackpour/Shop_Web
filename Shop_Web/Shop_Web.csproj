@@ -119,7 +119,10 @@
     <Content Include="Content\img\arad.png" />
     <Content Include="Content\img\avatar.jpg" />
     <Content Include="Content\img\bg.jpg" />
+    <Content Include="Content\img\discount.png" />
+    <Content Include="Content\img\discount_.png" />
     <Content Include="Content\img\img.jpg" />
+    <Content Include="Content\img\Learn.png" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\phone.png" />
     <Content Include="Content\img\shop.png" />

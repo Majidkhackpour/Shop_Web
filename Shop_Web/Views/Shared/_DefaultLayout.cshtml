@@ -19,7 +19,7 @@
 </head>
 <body>
     <script src="/Content/js/modernizr.js"></script>
-    
+
 
     <div class="banner-layer">
         <div class="banner-text">
@@ -101,87 +101,108 @@
     <!-- End Mega Menu -->
     <!-- slider -->
     @RenderSection("Slider", false)
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
     <!-- End slider -->
 
 
-<div class="wonder_layer" style=" width: 100%; height: 400px; margin-top: 10px; direction: ltr">
-    <section class="wonder-shape">
-        <div class="obj1" style="background-color: white; width: 15%; height: 350px; position: absolute; margin: 20px; border-radius: 5px; direction: rtl">
-            <img src="/Content/img/arad.png" style="width: 90%; height: 50%; margin-top: 5px; border-radius: 5px; margin-left: 10px; margin-right: 10px;position: absolute">
-            <p style="position: absolute;  margin-top: 190px; font-size: 16px; margin-right: 10px;">
-                <b>عنوان کالا</b>
-            </p>
-            <p style="position: absolute;  margin-top: 260px;font-size: 12px;margin-right: 10px;">
-                قیمت:
-            </p>
-            <p style="position: absolute;  margin-top: 250px;font-size: 20px;margin-right: 50px;">
-                <b>250.000</b>
-            </p>
-            <p style="position: absolute;  margin-top: 260px;font-size: 12px;margin-right: 150px;">
-                تومان
-            </p>
-        </div>
+    <div class="wonder_layer" style=" width: 100%; height: 400px; margin-top: 10px; direction: ltr">
+        <section class="wonder-shape">
+            <div class="obj1" style="background-color: white; width: 15%; height: 350px; position: absolute; margin: 20px; border-radius: 5px; direction: rtl">
+                <img src="/Content/img/arad.png" style="width: 90%; height: 50%; margin-top: 5px; border-radius: 5px; margin-left: 10px; margin-right: 10px;position: absolute">
+                <p style="position: absolute;  margin-top: 190px; font-size: 16px; margin-right: 10px;">
+                    <b>عنوان کالا</b>
+                </p>
+                <p style="position: absolute;  margin-top: 260px;font-size: 12px;margin-right: 10px;">
+                    قیمت:
+                </p>
+                <p style="position: absolute;  margin-top: 250px;font-size: 20px;margin-right: 50px;">
+                    <b>250.000</b>
+                </p>
+                <p style="position: absolute;  margin-top: 260px;font-size: 12px;margin-right: 150px;">
+                    تومان
+                </p>
+            </div>
 
 
-        <div class="obj2" style="background-color: white; width: 15%; height: 350px; position: absolute; margin: 20px; margin-left: 250px; border-radius: 5px; direction: rtl">
-            <img src="/Content/img/arad.png" style="width: 90%; height: 50%; margin-top: 5px; border-radius: 5px; margin-left: 10px; margin-right: 10px;position: absolute">
-            <p style="position: absolute;  margin-top: 190px; font-size: 16px; margin-right: 10px;">
-                <b>عنوان کالا</b>
-            </p>
-            <p style="position: absolute;  margin-top: 260px;font-size: 12px;margin-right: 10px;">
-                قیمت:
-            </p>
-            <p style="position: absolute;  margin-top: 250px;font-size: 20px;margin-right: 50px;">
-                <b>250.000</b>
-            </p>
-            <p style="position: absolute;  margin-top: 260px;font-size: 12px;margin-right: 150px;">
-                تومان
-            </p>
-        </div>
-        
-        
-        <div class="obj3" style="background-color: white; width: 15%; height: 350px; position: absolute; margin: 20px; margin-left: 482px; border-radius: 5px; direction: rtl">
-            <img src="/Content/img/arad.png" style="width: 90%; height: 50%; margin-top: 5px; border-radius: 5px; margin-left: 10px; margin-right: 10px;position: absolute">
-            <p style="position: absolute;  margin-top: 190px; font-size: 16px; margin-right: 10px;">
-                <b>عنوان کالا</b>
-            </p>
-            <p style="position: absolute;  margin-top: 260px;font-size: 12px;margin-right: 10px;">
-                قیمت:
-            </p>
-            <p style="position: absolute;  margin-top: 250px;font-size: 20px;margin-right: 50px;">
-                <b>250.000</b>
-            </p>
-            <p style="position: absolute;  margin-top: 260px;font-size: 12px;margin-right: 150px;">
-                تومان
-            </p>
-        </div>
-        
-        
-        
-        <div class="obj4" style="background-color: white; width: 15%; height: 350px; position: absolute; margin: 20px; margin-left: 715px; border-radius: 5px; direction: rtl">
-            <img src="/Content/img/arad.png" style="width: 90%; height: 50%; margin-top: 5px; border-radius: 5px; margin-left: 10px; margin-right: 10px;position: absolute">
-            <p style="position: absolute;  margin-top: 190px; font-size: 16px; margin-right: 10px;">
-                <b>عنوان کالا</b>
-            </p>
-            <p style="position: absolute;  margin-top: 260px;font-size: 12px;margin-right: 10px;">
-                قیمت:
-            </p>
-            <p style="position: absolute;  margin-top: 250px;font-size: 20px;margin-right: 50px;">
-                <b>250.000</b>
-            </p>
-            <p style="position: absolute;  margin-top: 260px;font-size: 12px;margin-right: 150px;">
-                تومان
-            </p>
-        </div>
+            <div class="obj2" style="background-color: white; width: 15%; height: 350px; position: absolute; margin: 20px; margin-left: 250px; border-radius: 5px; direction: rtl">
+                <img src="/Content/img/arad.png" style="width: 90%; height: 50%; margin-top: 5px; border-radius: 5px; margin-left: 10px; margin-right: 10px;position: absolute">
+                <p style="position: absolute;  margin-top: 190px; font-size: 16px; margin-right: 10px;">
+                    <b>عنوان کالا</b>
+                </p>
+                <p style="position: absolute;  margin-top: 260px;font-size: 12px;margin-right: 10px;">
+                    قیمت:
+                </p>
+                <p style="position: absolute;  margin-top: 250px;font-size: 20px;margin-right: 50px;">
+                    <b>250.000</b>
+                </p>
+                <p style="position: absolute;  margin-top: 260px;font-size: 12px;margin-right: 150px;">
+                    تومان
+                </p>
+            </div>
 
-        <img src="/Content/img/wonder_.png" style="width: 100%; height: 400px;">
-    </section>
-</div>
+
+            <div class="obj3" style="background-color: white; width: 15%; height: 350px; position: absolute; margin: 20px; margin-left: 482px; border-radius: 5px; direction: rtl">
+                <img src="/Content/img/arad.png" style="width: 90%; height: 50%; margin-top: 5px; border-radius: 5px; margin-left: 10px; margin-right: 10px;position: absolute">
+                <p style="position: absolute;  margin-top: 190px; font-size: 16px; margin-right: 10px;">
+                    <b>عنوان کالا</b>
+                </p>
+                <p style="position: absolute;  margin-top: 260px;font-size: 12px;margin-right: 10px;">
+                    قیمت:
+                </p>
+                <p style="position: absolute;  margin-top: 250px;font-size: 20px;margin-right: 50px;">
+                    <b>250.000</b>
+                </p>
+                <p style="position: absolute;  margin-top: 260px;font-size: 12px;margin-right: 150px;">
+                    تومان
+                </p>
+            </div>
 
 
 
+            <div class="obj4" style="background-color: white; width: 15%; height: 350px; position: absolute; margin: 20px; margin-left: 715px; border-radius: 5px; direction: rtl">
+                <img src="/Content/img/arad.png" style="width: 90%; height: 50%; margin-top: 5px; border-radius: 5px; margin-left: 10px; margin-right: 10px;position: absolute">
+                <p style="position: absolute;  margin-top: 190px; font-size: 16px; margin-right: 10px;">
+                    <b>عنوان کالا</b>
+                </p>
+                <p style="position: absolute;  margin-top: 260px;font-size: 12px;margin-right: 10px;">
+                    قیمت:
+                </p>
+                <p style="position: absolute;  margin-top: 250px;font-size: 20px;margin-right: 50px;">
+                    <b>250.000</b>
+                </p>
+                <p style="position: absolute;  margin-top: 260px;font-size: 12px;margin-right: 150px;">
+                    تومان
+                </p>
+            </div>
 
-<div class="container margin-top-25">
+            <img src="/Content/img/wonder_.png" style="width: 100%; height: 400px;">
+        </section>
+    </div>
+
+
+
+
+    <div class="container margin-top-25">
         <aside class="col-md-3 col-sm-4 right-side-content">
             <!-- Basket -->
             <section class="border-radius basket-side">
