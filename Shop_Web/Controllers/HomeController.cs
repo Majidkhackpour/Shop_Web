@@ -32,7 +32,7 @@ namespace Shop_Web.Controllers
         }
         public ActionResult RightSide()
         {
-            return PartialView();
+            return PartialView("RightSide");
         }
     }
 }
