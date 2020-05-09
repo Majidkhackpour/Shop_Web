@@ -124,7 +124,9 @@
     <Content Include="Content\img\img.jpg" />
     <Content Include="Content\img\Learn.png" />
     <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\New.png" />
     <Content Include="Content\img\phone.png" />
+    <Content Include="Content\img\porForoosh.png" />
     <Content Include="Content\img\shop.png" />
     <Content Include="Content\img\slider.jpg" />
     <Content Include="Content\img\wonder_.png" />
@@ -182,11 +184,15 @@
     <None Include="packages.config" />
     <Content Include="Views\Shared\_DefaultLayout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Slider.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\AboutUs.cshtml" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Views\Home\WonderLayout.cshtml" />
+    <Content Include="Views\Home\New.cshtml" />
+    <Content Include="Views\Home\PorForoosh.cshtml" />
+    <Content Include="Views\Home\Slider.cshtml" />
+    <Content Include="Views\Home\RightSide.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
