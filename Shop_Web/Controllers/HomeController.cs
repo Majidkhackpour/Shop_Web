@@ -22,17 +22,5 @@ namespace Shop_Web.Controllers
         {
             return PartialView();
         }
-        public ActionResult New()
-        {
-            return PartialView();
-        }
-        public ActionResult PorForoosh()
-        {
-            return PartialView();
-        }
-        public ActionResult RightSide()
-        {
-            return PartialView("RightSide");
-        }
     }
 }

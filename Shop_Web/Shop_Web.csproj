@@ -206,10 +206,7 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\Home\WonderLayout.cshtml" />
-    <Content Include="Views\Home\New.cshtml" />
-    <Content Include="Views\Home\PorForoosh.cshtml" />
     <Content Include="Views\Home\Slider.cshtml" />
-    <Content Include="Views\Shared\RightSide.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\_SuccesRegister.cshtml" />
     <None Include="Web.Debug.config">
