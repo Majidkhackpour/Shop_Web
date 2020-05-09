@@ -1,0 +1,9 @@
+﻿@using System.Configuration
+@model EntityCache.Bussines.UserBussines
+<div style="direction: rtl;padding: 20px">
+    <h2>@Model.RealName عزیز!</h2>
+    <p>با تشکر از ثبت نام شما در سایت ما. جهت فعال سازس حساب کاربری خود روی لینک زیر کلیک کنید</p>
+    <p>
+        <a href="https://localhost:44385/Account/ActiveUser/@Model.ActiveCode">لینک فعالسازی</a>
+    </p>
+</div>
