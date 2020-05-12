@@ -74,7 +74,7 @@ namespace Shop_Web.Controllers
 
         [HttpPost]
         [Route("Login")]
-        public async Task<ActionResult> Login(WebUsers login)
+        public async Task<ActionResult> Login(WebUsers login,string ReturnUrl="/")
         {
             try
             {
@@ -98,7 +98,7 @@ namespace Shop_Web.Controllers
                         user.RememberMe = login.RememberMe;
                         await user.SaveAsync();
                         FormsAuthentication.SetAuthCookie(user.UserName, login.RememberMe);
-                        return Redirect("/");
+                        return Redirect(ReturnUrl);
                     }
                     else
                     {

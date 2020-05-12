@@ -4,6 +4,6 @@
     <h2>@Model.RealName عزیز!</h2>
     <p>با تشکر از ثبت نام شما در سایت ما. جهت فعال سازس حساب کاربری خود روی لینک زیر کلیک کنید</p>
     <p>
-        <a href="https://localhost:44385/Account/ActiveUser/@Model.ActiveCode">لینک فعالسازی</a>
+        <a href="@ConfigurationManager.AppSettings["MyDomain"]/Account/ActiveUser/@Model.ActiveCode">لینک فعالسازی</a>
     </p>
 </div>
