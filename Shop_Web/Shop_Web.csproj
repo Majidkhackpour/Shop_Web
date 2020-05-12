@@ -176,7 +176,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\reCaptchaResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\GoogleRecaptcha.cs" />
     <Compile Include="Utilities\PartialToStringClass.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -207,12 +209,15 @@
     <Content Include="Views\Home\AboutUs.cshtml" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
-    <Content Include="Views\Home\WonderLayout.cshtml" />
     <Content Include="Views\Home\Slider.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\_SuccesRegister.cshtml" />
     <Content Include="Views\_ManageEmails\ActivationEmail.cshtml" />
     <Content Include="Views\Account\ActiveUser.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Shared\_LoginUser.cshtml" />
+    <Content Include="Views\Shared\_Wonder.cshtml" />
+    <Content Include="Views\Home\WonderLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -223,7 +228,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\WebService\WebService\EntityCache\EntityCache.csproj">

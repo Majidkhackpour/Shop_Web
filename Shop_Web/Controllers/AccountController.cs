@@ -17,6 +17,7 @@ namespace Shop_Web.Controllers
         {
             return View();
         }
+        [Route("Login")]
         public ActionResult Login()
         {
             return View();
@@ -26,11 +27,12 @@ namespace Shop_Web.Controllers
         [Route("Register")]
         [ValidateAntiForgeryToken]
         [Obsolete]
-        public async Task<ActionResult> Register(WebUsers user)
+        public async Task<ActionResult> Register(WebUsers user, FormCollection form)
         {
             try
             {
                 if (!ModelState.IsValid) return View(user);
+                if (!GoogleRecaptcha.Authentication(form)) return View(user);
                 if (user.Guid == Guid.Empty)
                     user.Guid = Guid.NewGuid();
                 if (!await WebUsers.CheckEmail(user.Guid, user.Email))
@@ -50,9 +52,10 @@ namespace Shop_Web.Controllers
                     RealName = user.RealName,
                     RegisterDate = DateTime.Now,
                     UserName = user.UserName,
-                    RolleGuid = WebUsers.GetRolleGuid("User")
+                    RolleGuid = WebUsers.GetRolleGuid("User"),
+                    RememberMe = false
                 };
-                
+
                 var body =
                     PartialToStringClass.RenderPartialView("_ManageEmails", "ActivationEmail", webuser);
 
@@ -69,6 +72,51 @@ namespace Shop_Web.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("Login")]
+        public async Task<ActionResult> Login(WebUsers login)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(login.Email))
+                {
+                    ModelState.AddModelError("Email", "لطفا ایمیل را وارد نمایید");
+                    return View(login);
+                }
+                if (string.IsNullOrEmpty(login.Password))
+                {
+                    ModelState.AddModelError("Password", "لطفا رمز عبور را وارد نمایید");
+                    return View(login);
+                }
+                var hashPass = FormsAuthentication.HashPasswordForStoringInConfigFile(login.Password, "MD5");
+                var user = await UserBussines.AuthenticationUserAsync(login.Email, hashPass);
+                if (user != null)
+                {
+                    //کاربر پیدا شد
+                    if (user.IsActive)
+                    {
+                        user.RememberMe = login.RememberMe;
+                        await user.SaveAsync();
+                        FormsAuthentication.SetAuthCookie(user.UserName, login.RememberMe);
+                        return Redirect("/");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("Email", "حساب کاربری شما فعال نشده است");
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("Email", "کاربری با اطلاعات وارد شده یافت نشد");
+                }
+                return View(login);
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+                return View(login);
+            }
+        }
         public async Task<ActionResult> ActiveUser(string id)
         {
             try
@@ -86,6 +134,12 @@ namespace Shop_Web.Controllers
                 WebErrorLog.ErrorInstence.StartErrorLog(ex);
                 return View();
             }
+        }
+
+        public ActionResult LogOff()
+        {
+            FormsAuthentication.SignOut();
+            return Redirect("/");
         }
     }
 }
