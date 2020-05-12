@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Data.Entity;
-using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using EntityCache.WebBussines;
-using SqlServerPersistence.Model;
 
 namespace Shop_Web.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class WebUsersController : Controller
     {
         // GET: Admin/WebUsers
