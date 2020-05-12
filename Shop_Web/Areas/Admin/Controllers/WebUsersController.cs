@@ -1,18 +1,19 @@
 ﻿using System;
+using System.Data.Entity;
+using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using EntityCache.WebBussines;
+using SqlServerPersistence.Model;
 
 namespace Shop_Web.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin")]
     public class WebUsersController : Controller
     {
         // GET: Admin/WebUsers
         public ActionResult Index()
         {
-            //return View(db.Users.ToList());
-            return View();
+            return View(WebUsers.GetAll());
         }
 
         // GET: Admin/WebUsers/Details/5
@@ -62,14 +63,6 @@ namespace Shop_Web.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            //}
-            //WebUsers webUsers = db.WebUsers.Find(id);
-            //if (webUsers == null)
-            //{
-            //    return HttpNotFound();
-            //}
-            //return View(webUsers);
             return View();
         }
 
@@ -80,12 +73,12 @@ namespace Shop_Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Guid,Modified,RealName,RolleGuid,UserName,Password,Email,ActiveCode,IsActive,RegisterDate,RememberMe,RePassword")] WebUsers webUsers)
         {
-            //if (ModelState.IsValid)
-            //{
+            if (ModelState.IsValid)
+            {
             //    db.Entry(webUsers).State = EntityState.Modified;
             //    db.SaveChanges();
             //    return RedirectToAction("Index");
-            //}
+            }
             return View(webUsers);
         }
 
@@ -113,7 +106,8 @@ namespace Shop_Web.Areas.Admin.Controllers
             //WebUsers webUsers = db.WebUsers.Find(id);
             //db.WebUsers.Remove(webUsers);
             //db.SaveChanges();
-            return RedirectToAction("Index");
+            //return RedirectToAction("Index");
+            return View();
         }
 
         protected override void Dispose(bool disposing)
