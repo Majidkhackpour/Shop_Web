@@ -9,5 +9,9 @@ namespace Shop_Web.Controllers
         {
             return PartialView();
         }
+        public ActionResult RecoveryPassword()
+        {
+            return PartialView();
+        }
     }
 }

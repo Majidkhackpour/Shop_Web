@@ -158,6 +158,8 @@
     <Content Include="Areas\Admin\Views\WebUsers\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\WebUsers\Index.cshtml" />
     <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Users\Views\web.config" />
+    <Content Include="Areas\Users\Views\Account\ChangePassword.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -180,6 +182,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\WebUsersController.cs" />
+    <Compile Include="Areas\Users\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Users\UsersAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\_ManageEmailsController.cs" />
@@ -229,6 +233,10 @@
     <Content Include="Views\Shared\_LoginUser.cshtml" />
     <Content Include="Views\Shared\_Wonder.cshtml" />
     <Content Include="Views\Home\WonderLayout.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\_ManageEmails\RecoveryPassword.cshtml" />
+    <Content Include="Views\Account\_SuccesForgotPassword.cshtml" />
+    <Content Include="Views\Account\RecoveryPassword.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -239,6 +247,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Users\Data\" />
+    <Folder Include="Areas\Users\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\WebService\WebService\EntityCache\EntityCache.csproj">

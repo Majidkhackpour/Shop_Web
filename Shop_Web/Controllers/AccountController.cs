@@ -74,7 +74,7 @@ namespace Shop_Web.Controllers
 
         [HttpPost]
         [Route("Login")]
-        public async Task<ActionResult> Login(WebUsers login,string ReturnUrl="/")
+        public async Task<ActionResult> Login(WebUsers login, string ReturnUrl = "/")
         {
             try
             {
@@ -140,6 +140,99 @@ namespace Shop_Web.Controllers
         {
             FormsAuthentication.SignOut();
             return Redirect("/");
+        }
+
+        [Route("ForgotPassword")]
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
+        [Route("ForgotPassword")]
+        [HttpPost]
+        public async Task<ActionResult> ForgotPassword(WebUsers forgot)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(forgot.Email))
+                {
+                    ModelState.AddModelError("Email", "لطفا ایمیل را وارد نمایید");
+                    return View(forgot);
+                }
+
+                var user = await UserBussines.GetAsyncByEmail(forgot.Email);
+                if (user != null)
+                {
+                    if (user.IsActive)
+                    {
+                        var body = PartialToStringClass.RenderPartialView("_ManageEmails", "RecoveryPassword", user);
+                        SendEmail.Send(user.Email, "بازیابی کلمه عبور", body);
+                        return View("_SuccesForgotPassword", user);
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("Email", "حساب کاربری شما فعال نیست");
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("Email", "کاربری یافت نشد");
+                }
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+            }
+
+            return View();
+        }
+
+        public ActionResult RecoveryPassword(string activeCode)
+        {
+            try
+            {
+                return View();
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+                return View();
+            }
+        }
+        [HttpPost]
+        public async Task<ActionResult> RecoveryPassword(string id, WebUsers recovery)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(recovery.Password))
+                {
+                    ModelState.AddModelError("Password", "لطفا کلمه عبور را وارد نمایید");
+                    return View(recovery);
+                }
+                if (string.IsNullOrEmpty(recovery.RePassword))
+                {
+                    ModelState.AddModelError("Password", "لطفا تکرار کلمه عبور را وارد نمایید");
+                    return View(recovery);
+                }
+
+                var user = await UserBussines.GetAsync(id);
+                if (user == null)
+                {
+                    return HttpNotFound();
+                }
+                else
+                {
+                    user.Password = FormsAuthentication.HashPasswordForStoringInConfigFile(recovery.Password, "MD5");
+                    user.ActiveCode = Guid.NewGuid().ToString();
+                    await user.SaveAsync();
+                    return Redirect("/Login?recovery=true");
+                }
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+                return View();
+            }
+
         }
     }
 }

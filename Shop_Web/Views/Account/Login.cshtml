@@ -19,6 +19,15 @@
                 </p>
             </div>
         }
+        @if (Request.QueryString["recovery"] != null)
+        {
+            <div class="alert alert-success">
+                <p>
+                    کلمه عبور شما با موفقیت تغییر کرد
+                </p>
+                <p> می توانید وارد سایت شوید</p>
+            </div>
+        }
         <hr/>
 
         <div class="form-group">
@@ -47,7 +56,13 @@
             </div>
         </div>
 
-
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <a href="/ForgotPassword">
+                    کلمه عبور خود را فراموش کرده ام!
+                </a>
+            </div>
+        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
