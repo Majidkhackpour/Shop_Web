@@ -1,0 +1,60 @@
+﻿@model IEnumerable<EntityCache.WebBussines.WebProductGroup>
+
+@{
+    ViewBag.Title = "مدیریت گروه محصولات";
+}
+
+    <h2>مدیریت گروه محصولات</h2>
+
+<p>
+    <a class="btn btn-success">افزودن سرگروه جدید</a>
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            زیر گروه ها
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @if (item.SubGroups != null)
+                {
+                    <ul>
+                        @foreach (var subGroup in item.SubGroups)
+                        {
+                            <li>@subGroup.Name</li>
+                        }
+                    </ul>
+                }
+            </td>
+            <td>
+                <a class="btn btn-primary btn-xs">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </a>
+                <a class="btn btn-warning btn-xs">
+                    <i class="glyphicon glyphicon-edit"></i>
+                </a>
+                <a class="btn btn-danger btn-xs">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>

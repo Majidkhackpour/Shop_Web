@@ -1,0 +1,25 @@
+﻿@model IEnumerable<EntityCache.WebBussines.WebProductGroup>
+
+<section class="border-radius category-side">
+    <header><h3> دسته بندی ها </h3></header>
+    <article>
+        <ul class="category-menu">
+            @foreach (var group in Model.Where(q => q.ParentGuid == Guid.Empty).OrderBy(q => q.Name))
+            {
+                <li>
+                    <h2><a href="">@group.Name</a></h2>
+                    @if (Model.Any(q => q.ParentGuid == group.Guid))
+                    {
+                        <ul class="child-category-menu">
+                            @foreach (var sunGroup in Model.Where(q => q.ParentGuid == group.Guid))
+                            {
+                                <h2><a href="">@sunGroup.Name</a> <span>(0)</span></h2>
+                            }
+                        </ul>
+                    }
+                </li>
+            }
+
+        </ul>
+    </article>
+</section>

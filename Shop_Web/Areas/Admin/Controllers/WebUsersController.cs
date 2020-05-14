@@ -60,9 +60,9 @@ namespace Shop_Web.Areas.Admin.Controllers
                         Password = FormsAuthentication.HashPasswordForStoringInConfigFile(webUsers.Password, "MD5"),
                         Email = webUsers.Email,
                         RealName = webUsers.RealName,
-                        UserName = webUsers.UserName
+                        UserName = webUsers.UserName,
+                        RolleGuid = WebUsers.GetRolleGuid("User")
                     };
-                    user.RolleGuid = WebUsers.GetRolleGuid(webUsers.IsAdmin ? "Admin" : "User");
                     user.Save();
                     return RedirectToAction("Index");
                 }
@@ -100,7 +100,7 @@ namespace Shop_Web.Areas.Admin.Controllers
             user.Email = webUsers.Email;
             user.RealName = webUsers.RealName;
             user.UserName = webUsers.UserName;
-            user.RolleGuid = WebUsers.GetRolleGuid(webUsers.IsAdmin ? "Admin" : "User");
+            user.RolleGuid = WebUsers.GetRolleGuid("User");
             user.Save();
             return RedirectToAction("Index");
 
