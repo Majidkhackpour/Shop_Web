@@ -1,0 +1,61 @@
+﻿@model IEnumerable<EntityCache.WebBussines.WebProductGroup>
+@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            زیر گروه ها
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr id="group_@item.Guid">
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @if (item.SubGroups != null)
+                {
+                    <ul>
+                        @foreach (var subGroup in item.SubGroups)
+                        {
+                            <li id="group_@subGroup.Guid">
+                                @subGroup.Name
+                                <a class="text-warning" onclick="Edit('@subGroup.Guid')">
+                                    <i class="glyphicon glyphicon-edit"></i>
+                                </a>
+                                <a class="text-danger" onclick="Delete('@subGroup.Guid')">
+                                    <i class="glyphicon glyphicon-trash"></i>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                }
+            </td>
+            <td>
+                <a class="btn btn-primary btn-xs" onclick="Create('@item.Guid')">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </a>
+                <a class="btn btn-warning btn-xs" onclick="Edit('@item.Guid')">
+                    <i class="glyphicon glyphicon-edit"></i>
+                </a>
+                <a class="btn btn-danger btn-xs" onclick="Delete('@item.Guid')">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>

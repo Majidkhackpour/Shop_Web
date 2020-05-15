@@ -1,60 +1,63 @@
-﻿@model IEnumerable<EntityCache.WebBussines.WebProductGroup>
+﻿
 
 @{
     ViewBag.Title = "مدیریت گروه محصولات";
 }
 
-    <h2>مدیریت گروه محصولات</h2>
+<h2>مدیریت گروه محصولات</h2>
 
 <p>
-    <a class="btn btn-success">افزودن سرگروه جدید</a>
+    <a class="btn btn-success" onclick="Create()">افزودن سرگروه جدید</a>
 </p>
-<table class="table table-bordered">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Code)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            زیر گروه ها
-        </th>
-        <th></th>
-    </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Code)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @if (item.SubGroups != null)
-                {
-                    <ul>
-                        @foreach (var subGroup in item.SubGroups)
-                        {
-                            <li>@subGroup.Name</li>
-                        }
-                    </ul>
-                }
-            </td>
-            <td>
-                <a class="btn btn-primary btn-xs">
-                    <i class="glyphicon glyphicon-plus"></i>
-                </a>
-                <a class="btn btn-warning btn-xs">
-                    <i class="glyphicon glyphicon-edit"></i>
-                </a>
-                <a class="btn btn-danger btn-xs">
-                    <i class="glyphicon glyphicon-trash"></i>
-                </a>
-            </td>
-        </tr>
+<div id="listGroup">
+    @Html.Action("LiatGroups")
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body" id="myModalBody">
+                ...
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function Create(parentGuid) {
+        $.get("/Admin/WebProductGroups/Create/"+parentGuid,
+            function(result) {
+                $("#myModal").modal();
+                $("#myModalLabel").html("افزودن گروه محصول جدید");
+                $("#myModalBody").html(result);
+            });
     }
 
-</table>
+    function Edit(id) {
+        $.get("/Admin/WebProductGroups/Edit/"+id,
+            function(result) {
+                $("#myModal").modal();
+                $("#myModalLabel").html("ویرایش گروه محصولات");
+                $("#myModalBody").html(result);
+            });
+    }
+
+    function Delete(id) {
+        if (confirm("آیا از حذف اطمینان دارید؟")) {
+            $.get("/Admin/WebProductGroups/Delete/" + id,
+                function (result) {
+                    $("#group_" + id).hide('slow');
+                });
+        }
+    }
+
+    function success() {
+        $("#myModal").modal('hide');
+    }
+</script>
