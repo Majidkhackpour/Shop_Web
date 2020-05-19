@@ -1,17 +1,20 @@
-﻿@model IEnumerable<EntityCache.WebBussines.WebProduct>
+﻿ @model IEnumerable<EntityCache.WebBussines.WebProduct>
 
 @{
-    ViewBag.Title = "مدیریت محصولات";
+    ViewBag.Title = "لیست محصولات";
     Layout = "../Shared/_Layout.cshtml";
 }
 
-    <h2>مدیریت محصولات</h2>
+    <h2>لیست محصولات</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+ <p>
+     <a class="btn btn-primary" href="@Url.Action("Create")">افزودن محصول جدید</a>
+ </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageName)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Code)
         </th>
@@ -36,6 +39,9 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            <img class="thumbnail" src="/Images/ProductImages/Thumb/@item.ImageName" style="width: 150px;height: 150px"/>
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Code)
         </td>
         <td>
@@ -54,9 +60,10 @@
             @Html.DisplayFor(modelItem => item.Color)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Guid }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Guid }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Guid })
+            <a class="btn btn-default btn-xs" href="#">ویژگی های محصول</a>
+            <a class="btn btn-info btn-xs" href="@Url.Action("Gallery",new {id=@item.Guid})">گالری تصاویر محصول</a>
+            <a class="btn btn-warning btn-xs" href="@Url.Action("Edit",new {id=@item.Guid})">ویرایش</a>
+            <a class="btn btn-danger btn-xs" href="@Url.Action("Delete",new {id=@item.Guid})">حذف</a>
         </td>
     </tr>
 }
