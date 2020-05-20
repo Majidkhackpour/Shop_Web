@@ -81,10 +81,7 @@ namespace Shop_Web.Areas.Admin
                     Modified = DateTime.Now,
                     Code = await ProductBussines.NextCode(),
                     Description = webProduct.Description.Replace("<p>", "").Replace("</p>", ""),
-                    Abad = webProduct.Abad,
-                    Color = webProduct.Color,
                     CreateDate = DateTime.Now,
-                    Kind = webProduct.Kind,
                     Price = webProduct.Price,
                     ShortDesc = webProduct.ShortDesc,
                     ImageName = "No.png"
@@ -226,9 +223,6 @@ namespace Shop_Web.Areas.Admin
 
                 prdoduct.Name = webProduct.Name;
                 prdoduct.Description = webProduct.Description.Replace("<p>", "").Replace("</p>", "");
-                prdoduct.Abad = webProduct.Abad;
-                prdoduct.Color = webProduct.Color;
-                prdoduct.Kind = webProduct.Kind;
                 prdoduct.Price = webProduct.Price;
                 prdoduct.ShortDesc = webProduct.ShortDesc;
 
@@ -318,7 +312,7 @@ namespace Shop_Web.Areas.Admin
         {
             var gallery = new WebProductPictures();
             try
-            { 
+            {
                 gallery = WebProductPictures.Get(id);
 
                 System.IO.File.Delete(Server.MapPath("/Images/ProductImages/" + gallery.ImageName));
@@ -342,6 +336,57 @@ namespace Shop_Web.Areas.Admin
                 //db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+
+        public async Task<ActionResult> ProductFeatures(Guid id)
+        {
+            var prd = await ProductBussines.GetAsync(id);
+            ViewBag.Features = prd.FeatureList;
+            var features = await FeatureBussines.GetAllAsync();
+            ViewBag.FeatureGuid = new SelectList(features.ToList(), "Guid", "Title");
+            return View(new WebPrdFeature()
+            {
+                PrdGuid = id
+            });
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> ProductFeatures(WebPrdFeature webPrd)
+        {
+            var prd = new PrdFeatureBussines();
+            try
+            {
+                prd.Guid = Guid.NewGuid();
+                prd.Modified = DateTime.Now;
+                prd.PrdGuid = webPrd.PrdGuid;
+                prd.Value = webPrd.Value;
+                prd.FeatureGuid = webPrd.FeatureGuid;
+                await prd.SaveAsync();
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+            }
+
+            return RedirectToAction("ProductFeatures", new { id = prd.PrdGuid });
+        }
+
+        public ActionResult DeleteFeature(Guid id)
+        {
+            var f = new WebPrdFeature();
+            try
+            {
+                f = WebPrdFeature.Get(id);
+                f.Remove();
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+            }
+
+
+            return RedirectToAction("ProductFeatures", new { id = f.PrdGuid });
         }
     }
 }

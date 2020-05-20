@@ -24,15 +24,6 @@
         <th>
             @Html.DisplayNameFor(model => model.Price)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Abad)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Kind)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Color)
-        </th>
         <th></th>
     </tr>
 
@@ -51,16 +42,7 @@
             @Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Abad)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Kind)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Color)
-        </td>
-        <td>
-            <a class="btn btn-default btn-xs" href="#">ویژگی های محصول</a>
+            <a class="btn btn-default btn-xs" href="@Url.Action("ProductFeatures",new {id=@item.Guid})">ویژگی های محصول</a>
             <a class="btn btn-info btn-xs" href="@Url.Action("Gallery",new {id=@item.Guid})">گالری تصاویر محصول</a>
             <a class="btn btn-warning btn-xs" href="@Url.Action("Edit",new {id=@item.Guid})">ویرایش</a>
             <a class="btn btn-danger btn-xs" href="@Url.Action("Delete",new {id=@item.Guid})">حذف</a>

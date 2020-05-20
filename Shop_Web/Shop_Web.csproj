@@ -1305,6 +1305,12 @@
     <Content Include="ckeditor\_samples\adobeair\run.sh" />
     <Content Include="ckeditor\_samples\assets\output_for_flash.fla" />
     <Content Include="Areas\Admin\Views\WebProducts\Gallery.cshtml" />
+    <Content Include="Areas\Admin\Views\WebFeatures\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\WebFeatures\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\WebFeatures\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\WebFeatures\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\WebFeatures\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\WebProducts\ProductFeatures.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -1327,6 +1333,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\WebFeaturesController.cs" />
     <Compile Include="Areas\Admin\Controllers\WebProductGroupsController.cs" />
     <Compile Include="Areas\Admin\Controllers\WebUsersController.cs" />
     <Compile Include="Areas\Admin\WebProductsController.cs" />
