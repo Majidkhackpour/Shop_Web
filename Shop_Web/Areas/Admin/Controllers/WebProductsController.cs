@@ -11,7 +11,7 @@ using EntityCache.WebBussines;
 using PacketParser.Services;
 using Shop_Web.Utilities;
 
-namespace Shop_Web.Areas.Admin
+namespace Shop_Web.Areas.Admin.Controllers
 {
     public class WebProductsController : Controller
     {
@@ -206,16 +206,19 @@ namespace Shop_Web.Areas.Admin
                 prdoduct.TagsList = tagList;
 
                 var list = new List<PrdSelectedGroupBussines>();
-                foreach (var item in selectedGroups)
+                if (selectedGroups != null && selectedGroups.Any())
                 {
-                    var a = new PrdSelectedGroupBussines()
+                    foreach (var item in selectedGroups)
                     {
-                        Guid = Guid.NewGuid(),
-                        Modified = DateTime.Now,
-                        PrdGuid = prdoduct.Guid,
-                        GroupGuid = item
-                    };
-                    list.Add(a);
+                        var a = new PrdSelectedGroupBussines()
+                        {
+                            Guid = Guid.NewGuid(),
+                            Modified = DateTime.Now,
+                            PrdGuid = prdoduct.Guid,
+                            GroupGuid = item
+                        };
+                        list.Add(a);
+                    }
                 }
 
                 prdoduct.GroupList = list;
