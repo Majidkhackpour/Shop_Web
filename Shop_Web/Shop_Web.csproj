@@ -1263,6 +1263,7 @@
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\owl.carousel.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\CustomeStyle.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\yekannumbers.svg" />
     <Content Include="Content\fonts\yekanweb.svg" />
@@ -1407,6 +1408,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\_ManageEmailsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1465,6 +1467,9 @@
     <Content Include="Views\Product\LastView.cshtml" />
     <Content Include="Views\Shared\_Product.cshtml" />
     <Content Include="Views\Product\ShowProduct.cshtml" />
+    <Content Include="Views\Product\ShowComment.cshtml" />
+    <Content Include="Views\Product\CreateComment.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

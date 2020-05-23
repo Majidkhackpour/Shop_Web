@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="/Content/css/carousel.css">
     <link rel="stylesheet" type="text/css" href="/Content/css/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="/Content/css/style.css">
+    <link href="~/Content/CustomeStyle.css" rel="stylesheet" />
     <script src="/Content/js/jquery-v1.11.3.js"></script>
 </head>
 <body>
@@ -88,8 +89,8 @@
             <!-- Search -->
             <div class="form-search">
                 <span><i class="fa fa-search"></i></span>
-                <form action="" method="get">
-                    <input type="text" placeholder=" جستجو کنید ..." class="border-radius">
+                <form action="/Search" method="get">
+                    <input type="text" placeholder=" جستجو کنید ..." name="q" class="border-radius">
                     <button type="submit" class="border-radius"> بگرد </button>
                 </form>
             </div>
@@ -180,7 +181,7 @@
             </section>
             <!-- End compare -->
             <!-- Category -->
-            @Html.Action("ShowGroups","Product",new {area=""})
+            @Html.Action("ShowGroups", "Product", new { area = "" })
             <!-- End Category -->
             <!-- Category -->
             <!-- End Category -->
@@ -192,7 +193,7 @@
     </div>
 
 
-   @* @Html.Partial("_Wonder")*@
+    @* @Html.Partial("_Wonder")*@
 
 
 
@@ -272,5 +273,6 @@
     <script src="/Content/js/script.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
 </body>
 </html>

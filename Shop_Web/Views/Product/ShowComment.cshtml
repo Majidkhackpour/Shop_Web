@@ -1,0 +1,36 @@
+﻿@model IEnumerable<EntityCache.WebBussines.WebPrdComment>
+
+@foreach (var item in Model.Where(q => q.ParentGuid == Guid.Empty))
+{
+    <li>
+        <a onclick="ReplyComment('@item.Guid')" class="reply-button">پاسخ</a>
+
+        <img src="/Content/img/avatar.jpg" width="65">
+        <div>
+            <h5>ارسال شده از : @item.Name در تاریخ : @item.DateSh </h5>
+            <p>
+                @item.Comment
+            </p>
+        </div>
+        <div class="clearfix"></div>
+        @if (Model.Any(q => q.ParentGuid == item.Guid))
+        {
+            <ul>
+                @foreach (var sub in Model.Where(q => q.ParentGuid == item.Guid))
+                {
+                    <li>
+                        <img src="/Content/img/avatar.jpg" width="65">
+                        <div>
+                            <h5>ارسال شده از : @sub.Name در تاریخ : @sub.DateSh </h5>
+                            <p>
+                                @sub.Comment
+                            </p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                }
+            </ul>
+        }
+
+    </li>
+}

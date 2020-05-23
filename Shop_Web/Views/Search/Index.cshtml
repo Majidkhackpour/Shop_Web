@@ -1,0 +1,19 @@
+﻿@model IEnumerable<EntityCache.WebBussines.WebProduct>
+@{
+    ViewBag.Title = "Index";
+}
+
+    <section class="last-products">
+        <header><h3> تعداد @Model.Count() با کلمه @ViewBag.Search یافت شد </h3></header>
+        <article>
+
+            @foreach (var item in Model)
+            {
+                @Html.Partial("_Product", item)
+            }
+
+
+            <div class="clearfix"></div>
+        </article>
+    </section>
+
