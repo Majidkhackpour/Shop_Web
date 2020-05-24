@@ -1,0 +1,70 @@
+﻿@using EntityCache.WebBussines
+@model IEnumerable<EntityCache.WebBussines.WebProduct>
+@{
+    ViewBag.Title = "ArchiveProduct";
+}
+
+
+@section Filters
+{
+    <section class="border-radius">
+        <header><h3>فیلترها</h3></header>
+        <article class="filter">
+            <form action="/Archive">
+                <p>عنوان</p>
+                <p><input type="text" name="title" class="form-control" /></p>
+
+                <p>قیمت از</p>
+                <p><input type="number" value="0" name="minPrice" class="form-control" /></p>
+
+                <p>قیمت تا</p>
+                <p><input type="number" value="0" name="maPrice" class="form-control" /></p>
+
+                <p>گروه ها</p>
+                @{
+                    List<WebProductGroup> list = ViewBag.Groups;
+                }
+
+                <ul>
+                    @foreach (var group in list.Where(q => q.ParentGuid == Guid.Empty).ToList())
+                    {
+                        <li>
+                            <input type="checkbox" name="selectedGroups" value="@group.Guid" />
+                            <span>@group.Name</span>
+                            @if (list.Any(q => q.ParentGuid == group.Guid))
+                            {
+                                <ul>
+                                    @foreach (var sub in list.Where(q => q.ParentGuid == group.Guid).ToList())
+                                    {
+                                        <li>
+                                            <input type="checkbox" name="selectedGroups" value="@sub.Guid" />
+                                            <span>@sub.Name</span>
+                                        </li>
+                                    }
+                                </ul>
+                            }
+                        </li>
+                    }
+                </ul>
+
+
+
+                <input type="submit" class="btn btn-block btn-primary" value="اعمال فیلترها" />
+            </form>
+        </article>
+    </section>
+}
+
+<section class="last-products">
+    <header><h3> آرشیو محصولات</h3></header>
+    <article>
+
+        @foreach (var item in Model)
+        {
+            @Html.Partial("_Product", item)
+        }
+
+
+        <div class="clearfix"></div>
+    </article>
+</section>

@@ -81,5 +81,16 @@ namespace Shop_Web.Controllers
 
             return PartialView(webPrd);
         }
+
+        [Route("Archive")]
+        public ActionResult ArchiveProduct()
+        {
+            var list = WebProductGroup.GetAll();
+            ViewBag.Groups = list;
+
+            var prdList = WebProduct.GetAll();
+
+            return View(prdList.ToList());
+        }
     }
 }

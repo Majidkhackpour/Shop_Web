@@ -77,13 +77,13 @@
         <div class="container">
             <span class="responsive-list"><i class="fa fa-th-list"></i></span>
             <ul>
+                <li><a href="/"> صفحه اصلی</a></li>
+                <li><a href="/Archive"> آرشیو محصولات </a></li>
+                @*<li><a href=""> منوی شماره یک </a></li>
                 <li><a href=""> منوی شماره یک </a></li>
                 <li><a href=""> منوی شماره یک </a></li>
                 <li><a href=""> منوی شماره یک </a></li>
-                <li><a href=""> منوی شماره یک </a></li>
-                <li><a href=""> منوی شماره یک </a></li>
-                <li><a href=""> منوی شماره یک </a></li>
-                <li><a href=""> منوی شماره یک </a></li>
+                <li><a href=""> منوی شماره یک </a></li>*@
             </ul>
 
             <!-- Search -->
@@ -131,6 +131,7 @@
     <div class="container margin-top-25">
         <aside class="col-md-3 col-sm-4 right-side-content">
             <!-- Basket -->
+            @RenderSection( "Filters",false)
             <section class="border-radius basket-side">
                 <header><h3> سبد خرید شما  </h3></header>
                 <article>
