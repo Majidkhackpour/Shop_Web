@@ -1,7 +1,7 @@
 ﻿@using EntityCache.WebBussines
 @model IEnumerable<EntityCache.WebBussines.WebProduct>
 @{
-    ViewBag.Title = "ArchiveProduct";
+    ViewBag.Title = "  آرشیو محصولات";
 }
 
 
@@ -11,25 +11,27 @@
         <header><h3>فیلترها</h3></header>
         <article class="filter">
             <form action="/Archive">
+                <input type="hidden" value="@ViewBag.pageId" name="pageId"/>
                 <p>عنوان</p>
-                <p><input type="text" name="title" class="form-control" /></p>
+                <p><input type="text" name="title" class="form-control" value="@ViewBag.PrdTitle"/></p>
 
                 <p>قیمت از</p>
-                <p><input type="number" value="0" name="minPrice" class="form-control" /></p>
+                <p><input type="number" value="@ViewBag.minPrice" name="minPrice" class="form-control"/></p>
 
                 <p>قیمت تا</p>
-                <p><input type="number" value="0" name="maPrice" class="form-control" /></p>
+                <p><input type="number" value="@ViewBag.maxPrice" name="maxPrice" class="form-control"/></p>
 
                 <p>گروه ها</p>
                 @{
                     List<WebProductGroup> list = ViewBag.Groups;
+                    List<Guid> selectList = ViewBag.selectGroup ?? new List<Guid>();
                 }
 
                 <ul>
                     @foreach (var group in list.Where(q => q.ParentGuid == Guid.Empty).ToList())
                     {
                         <li>
-                            <input type="checkbox" name="selectedGroups" value="@group.Guid" />
+                            <input type="checkbox" name="selectedGroups" @((selectList.Any(e => e == group.Guid)) ? "checked" : "") value="@group.Guid"/>
                             <span>@group.Name</span>
                             @if (list.Any(q => q.ParentGuid == group.Guid))
                             {
@@ -37,7 +39,7 @@
                                     @foreach (var sub in list.Where(q => q.ParentGuid == group.Guid).ToList())
                                     {
                                         <li>
-                                            <input type="checkbox" name="selectedGroups" value="@sub.Guid" />
+                                            <input type="checkbox" name="selectedGroups" @((selectList.Any(e => e == sub.Guid)) ? "checked" : "") value="@sub.Guid"/>
                                             <span>@sub.Name</span>
                                         </li>
                                     }
@@ -49,7 +51,7 @@
 
 
 
-                <input type="submit" class="btn btn-block btn-primary" value="اعمال فیلترها" />
+                <input type="submit" class="btn btn-block btn-primary" value="اعمال فیلترها"/>
             </form>
         </article>
     </section>
@@ -68,3 +70,14 @@
         <div class="clearfix"></div>
     </article>
 </section>
+@if (ViewBag.PageCount > 0)
+{
+    <div class="pagination-layer">
+        <ul class="pagination">
+            @for (var i = 1; i <= ViewBag.PageCount; i++)
+            {
+                <li><a href="#">@i</a></li>
+            }
+        </ul>
+    </div>
+}

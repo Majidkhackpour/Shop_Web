@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -31,7 +32,7 @@ namespace Shop_Web.Controllers
             ViewBag.PrdFeatures = prd.FeatureList.DistinctBy(q => q.FeatureGuid).Select(q => new ShowPrdFeaturesVireModel()
             {
                 FeatureTitle = q.FeatureName,
-                Values = prd.FeatureList.Where(h=>h.FeatureGuid==q.FeatureGuid).Select(h => h.Value).ToList()
+                Values = prd.FeatureList.Where(h => h.FeatureGuid == q.FeatureGuid).Select(h => h.Value).ToList()
             }).ToList();
             return View(prd);
         }
@@ -56,7 +57,7 @@ namespace Shop_Web.Controllers
         {
             try
             {
-                if(!ModelState.IsValid) return PartialView(webPrd);
+                if (!ModelState.IsValid) return PartialView(webPrd);
                 var prd = new PrdCommentBussines()
                 {
                     Guid = webPrd.Guid,
@@ -83,14 +84,22 @@ namespace Shop_Web.Controllers
         }
 
         [Route("Archive")]
-        public ActionResult ArchiveProduct()
+        public ActionResult ArchiveProduct(int pageId = 1, string title = "", int minPrice = 0, int maxPrice = 0, List<Guid> selectedGroups = null)
         {
             var list = WebProductGroup.GetAll();
             ViewBag.Groups = list;
+            ViewBag.PrdTitle = title;
+            ViewBag.minPrice = minPrice;
+            ViewBag.maxPrice = maxPrice;
+            ViewBag.pageId = pageId;
+            ViewBag.selectGroup = selectedGroups;
 
-            var prdList = WebProduct.GetAll();
+            var prdList = WebProduct.GetAll(title, minPrice, maxPrice, selectedGroups);
 
-            return View(prdList.ToList());
+            var take = 1;
+            var skip = (pageId - 1) * take;
+            ViewBag.PageCount = prdList.Count() / take;
+            return View(prdList.OrderByDescending(q => q.CreateDate).Skip(skip).Take(take).ToList());
         }
     }
 }
