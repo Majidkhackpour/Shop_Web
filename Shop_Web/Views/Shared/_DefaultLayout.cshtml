@@ -35,7 +35,7 @@
                 <div class="clientarea">
                     <ul>
                         @Html.Partial("_LoginUser")
-                        <li><a href=""><i class="fa fa-shopping-bag"></i> سبد خرید <span>10</span></a></li>
+                        <li><a href=""><i class="fa fa-shopping-bag"></i> سبد خرید <span id="CountShopCart"></span></a></li>
                     </ul>
                 </div>
                 <!-- End Clientarea and Basket -->
@@ -274,6 +274,19 @@
     <script src="/Content/js/script.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+<script>
+    $(function() {
+        countShopCart();
+    });
+
+    function countShopCart() {
+        $.get("/api/Order",
+            function(res) {
+                $("#CountShopCart").html(res);
+            });
+    }
+</script>
 </body>
 </html>

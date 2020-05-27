@@ -13,7 +13,6 @@ namespace Shop_Web.Controllers
 {
     public class ProductController : Controller
     {
-
         public ActionResult ShowGroups()
         {
             return PartialView(WebProductGroup.GetAll());
@@ -96,7 +95,7 @@ namespace Shop_Web.Controllers
 
             var prdList = WebProduct.GetAll(title, minPrice, maxPrice, selectedGroups);
 
-            var take = 1;
+            var take = 9;
             var skip = (pageId - 1) * take;
             ViewBag.PageCount = prdList.Count() / take;
             return View(prdList.OrderByDescending(q => q.CreateDate).Skip(skip).Take(take).ToList());
