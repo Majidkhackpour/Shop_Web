@@ -13,9 +13,10 @@ namespace Shop_Web.Controllers
 {
     public class ProductController : Controller
     {
-        public ActionResult ShowGroups()
+        public async Task<ActionResult> ShowGroups()
         {
-            return PartialView(WebProductGroup.GetAll());
+            var list = await WebProductGroup.GetAllAsync();
+            return PartialView(list);
         }
 
         public ActionResult LastView()

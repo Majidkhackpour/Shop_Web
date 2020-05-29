@@ -80,10 +80,10 @@
                 <li><a href="/"> صفحه اصلی</a></li>
                 <li><a href="/Archive"> آرشیو محصولات </a></li>
                 @*<li><a href=""> منوی شماره یک </a></li>
-                <li><a href=""> منوی شماره یک </a></li>
-                <li><a href=""> منوی شماره یک </a></li>
-                <li><a href=""> منوی شماره یک </a></li>
-                <li><a href=""> منوی شماره یک </a></li>*@
+                    <li><a href=""> منوی شماره یک </a></li>
+                    <li><a href=""> منوی شماره یک </a></li>
+                    <li><a href=""> منوی شماره یک </a></li>
+                    <li><a href=""> منوی شماره یک </a></li>*@
             </ul>
 
             <!-- Search -->
@@ -131,33 +131,11 @@
     <div class="container margin-top-25">
         <aside class="col-md-3 col-sm-4 right-side-content">
             <!-- Basket -->
-            @RenderSection( "Filters",false)
-            <section class="border-radius basket-side">
-                <header><h3> سبد خرید شما  </h3></header>
-                <article>
-                    <ul>
-                        <li>
-                            <img class="border-radius" src="/Content/img/1.jpg">
-                            <div class="left-basket">
-                                <a href="">محصول شماره یک <span class="border-radius"> 2 </span></a>
-                            </div>
-                        </li>
-                        <li>
-                            <img class="border-radius" src="/Content/img/1.jpg">
-                            <div class="left-basket">
-                                <a href="">محصول شماره یک <span class="border-radius"> 2 </span></a>
-                            </div>
-                        </li>
-                        <li>
-                            <img class="border-radius" src="/Content/img/1.jpg">
-                            <div class="left-basket">
-                                <a href="">محصول شماره یک <span class="border-radius"> 2 </span></a>
-                            </div>
-                        </li>
-                    </ul>
-                    <a href="" class="show-basket-button border-radius">مشاهده سبد خرید</a>
-                </article>
-            </section>
+            @RenderSection("Filters", false)
+
+            <div id="showCart">
+                @Html.Action("ShowCart", "ShopCart")
+            </div>
             <!-- End Basket -->
             <!-- compare -->
             <section class="border-radius compare-side">
@@ -274,19 +252,30 @@
     <script src="/Content/js/script.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
 
-<script>
-    $(function() {
-        countShopCart();
-    });
+    <script>
+        $(function () {
+            countShopCart();
+        });
 
-    function countShopCart() {
-        $.get("/api/Order",
-            function(res) {
-                $("#CountShopCart").html(res);
-            });
-    }
-</script>
+        function countShopCart() {
+            $.get("/api/Order",
+                function (res) {
+                    $("#CountShopCart").html(res);
+                });
+        }
+        function AddToShopCart(id) {
+            $.get("/api/Order/" + id,
+                function (res) {
+                    $("#CountShopCart").html(res);
+                    UpdateShopCart();
+                });
+        }
+
+        function UpdateShopCart() {
+            $("#showCart").load("/ShopCart/ShowCart").fadeOut(800).fadeIn(800);
+        }
+    </script>
 </body>
 </html>

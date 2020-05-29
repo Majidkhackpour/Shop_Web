@@ -13,7 +13,7 @@
                         <ul class="child-category-menu">
                             @foreach (var sunGroup in Model.Where(q => q.ParentGuid == group.Guid))
                             {
-                                <h2><a href="/Archive?selectedGroups=@sunGroup.Guid">@sunGroup.Name</a> <span>(0)</span></h2>
+                                <h2><a href="/Archive?selectedGroups=@sunGroup.Guid">@sunGroup.Name</a> <span>(@sunGroup.CountPrdInGroup)</span></h2>
                             }
                         </ul>
                     }
