@@ -67,7 +67,7 @@ namespace Shop_Web.Controllers
                     Email = webPrd.Email,
                     PrdGuid = webPrd.PrdGuid,
                     Comment = webPrd.Comment,
-                    WebSite = webPrd.WebSite,
+                    WebSite = webPrd.WebSite ?? "",
                     CreateDate = DateTime.Now
                 };
                 if (prd.Guid == Guid.Empty)

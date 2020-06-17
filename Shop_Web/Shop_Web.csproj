@@ -1471,7 +1471,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\CheckContentImage.cs" />
     <Compile Include="Utilities\GoogleRecaptcha.cs" />
-    <Compile Include="Utilities\ImageResizer.cs" />
     <Compile Include="Utilities\PartialToStringClass.cs" />
     <Compile Include="Utilities\RolleProvider.cs" />
   </ItemGroup>
