@@ -1747,7 +1747,7 @@ section form > label input{margin-left: 5px}
 }
 
 .swiper-special .swiper-slide-inner {
-    margin-right: 10px;
+    margin-left: 10px;
     border-radius: 5px;
     background-color: #fff;
     box-sizing: border-box;
@@ -1858,4 +1858,22 @@ section form > label input{margin-left: 5px}
 .banners .swiper-button-next:after, .banners .swiper-button-prev:after {
     color: #fff;
     text-shadow: 0 2px 4px #616161;
+}
+.special-part {
+    padding: 40px 0;
+    background-image: url("/Content/img/special_bg.svg");
+    background-repeat: no-repeat;
+    background-position: 90%;
+    background-size: auto 100%;
+}
+.menu-image {
+    width: 100%;
+    padding-right: 10px;
+}
+.see-all-cats:after {
+    content: "\E0CD\00FE0E";
+    font-family: 'yekan';
+    vertical-align: middle;
+    margin-left: 4px;
+    font-size: 20px;
 }

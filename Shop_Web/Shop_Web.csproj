@@ -1298,9 +1298,13 @@
     <Content Include="Content\img\New.png" />
     <Content Include="Content\img\phone.png" />
     <Content Include="Content\img\porForoosh.png" />
+    <Content Include="Content\img\sample_product.jpg" />
     <Content Include="Content\img\shop.png" />
     <Content Include="Content\img\slider.jpg" />
     <Content Include="Content\img\specialSaleBanner.gif" />
+    <Content Include="Content\img\special_banner.png" />
+    <Content Include="Content\img\special_bg.svg" />
+    <Content Include="Content\img\special_market_banner.png" />
     <Content Include="Content\img\wonder_.png" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\carousel.js" />
@@ -1556,6 +1560,7 @@
     <Content Include="Views\ShopCart\Order.cshtml" />
     <Content Include="Views\Compare\ListCompare.cshtml" />
     <Content Include="Views\Compare\Index.cshtml" />
+    <Content Include="Views\Home\NewPostLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

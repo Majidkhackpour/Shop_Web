@@ -28,5 +28,9 @@ namespace Shop_Web.Controllers
         {
             return PartialView();
         }
+        public ActionResult NewPostLayout()
+        {
+            return PartialView();
+        }
     }
 }
