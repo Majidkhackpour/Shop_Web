@@ -1455,6 +1455,9 @@
     <Content Include="Content\fonts\yekanRegular.eot" />
     <Content Include="Content\fonts\yekanRegular.ttf" />
     <Content Include="Content\fonts\yekanRegular.woff" />
+    <Content Include="Areas\Admin\Views\WebOpinions\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\WebOpinions\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\WebOpinions\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -1481,6 +1484,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\WebFeaturesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\WebOpinionsController.cs" />
     <Compile Include="Areas\Admin\Controllers\WebProductGroupsController.cs" />
     <Compile Include="Areas\Admin\Controllers\WebSlidersController.cs" />
     <Compile Include="Areas\Admin\Controllers\WebUsersController.cs" />
@@ -1494,6 +1498,7 @@
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\ShopCartController.cs" />
+    <Compile Include="Controllers\WebOpinionsController.cs" />
     <Compile Include="Controllers\_ManageEmailsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1561,6 +1566,7 @@
     <Content Include="Views\Compare\ListCompare.cshtml" />
     <Content Include="Views\Compare\Index.cshtml" />
     <Content Include="Views\Home\NewPostLayout.cshtml" />
+    <Content Include="Views\WebOpinions\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
