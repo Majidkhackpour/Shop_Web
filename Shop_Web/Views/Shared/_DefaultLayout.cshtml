@@ -16,6 +16,8 @@
     <link rel="stylesheet" type="text/css" href="/Content/css/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="/Content/css/style.css">
     <link href="~/Content/CustomeStyle.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Assets/swiper.min.css">
+    <script src="/Assets/swiper.min.js"></script>
     <script src="/Content/js/jquery-v1.11.3.js"></script>
 </head>
 <body>
@@ -139,7 +141,7 @@
                             <ul>
                                 <li>
                                     <a href="/Users/Account/ChangePassword">تغییر کلمه عبور</a>
-                                    <hr/>
+                                    <hr />
                                 </li>
                                 <li>
                                     <a href="#">نمایش تاریخچه خرید</a>
@@ -166,7 +168,7 @@
             </div>
             <!-- End compare -->
             <!-- Category -->
-            @Html.Action("ShowGroups", "Product", new {area = ""})
+            @Html.Action("ShowGroups", "Product", new { area = "" })
             <!-- End Category -->
             <!-- Category -->
             <!-- End Category -->
@@ -284,13 +286,13 @@
         }
 
         function AddToCompare(id) {
-            $.get("/Compare/AddToCompare/" + id, function(res) {
+            $.get("/Compare/AddToCompare/" + id, function (res) {
                 $("#compare").html(res);
             });
         }
 
         function DeleteFromCompare(id) {
-            $.get("/Compare/DeleteCompare/" + id, function(res) {
+            $.get("/Compare/DeleteCompare/" + id, function (res) {
                 $("#compare").html(res);
             });
         }

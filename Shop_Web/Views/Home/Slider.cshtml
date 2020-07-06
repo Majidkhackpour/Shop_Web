@@ -1,26 +1,56 @@
 ﻿@model List<EntityCache.WebBussines.WebSlider>
-<div class="slider_layout" style="width: 100%; height: 400px; background-color: white;direction: ltr">
-
-    <div class="slider_1" style="background-color: #82c449; width: 35%; height: 170px; position: absolute; border-radius: 10px; margin: 10px">
-        <img src="/Content/img/Learn.png" style="width: 100%; height: 100%;  border-radius: 10px;position: absolute">
-    </div>
-    <div class="slider_2" style="background-color: #f1ccc4; width: 35%; height: 170px; position: absolute; border-radius: 10px; margin: 10px;margin-top: 190px">
-        <img src="/Content/img/discount_.png" style="width: 100%; height: 100%;  border-radius: 10px;position: absolute">
-    </div>
-    <div class="slideshow-container">
-
-        @foreach (var item in @Model)
-        {
-            <div class="mySlides fade">
-                <a href="@item.URL">
-                    <img src="/Images/Slider/@item.ImageName" title="@item.Title" style="width: 100%; height: 350px; margin-top: 10px; border-radius: 10px; direction: rtl;">
-                </a>
+<div class="banners">
+    <div class="inner-section row">
+        <div class="col-md-8">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="mySlides fade">
+                        <img src="/Content/img/banner1.jpg" alt="banner" class="block banner-image" width="100%" height="100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="/Content/img/banner2.jpg" alt="banner" class="block banner-image" width="100%" height="100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="/Content/img/banner3.jpg" alt="banner" class="block banner-image" width="100%" height="100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="/Content/img/banner4.jpg" alt="banner" class="block banner-image" width="100%" height="100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="/Content/img/banner5.jpg" alt="banner" class="block banner-image" width="100%" height="100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="/Content/img/banner6.jpg" alt="banner" class="block banner-image" width="100%" height="100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="/Content/img/banner7.jpg" alt="banner" class="block banner-image" width="100%" height="100%">
+                    </div>
+                </div>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
             </div>
-        }
-        @foreach (var item in @Model)
-        {
-            <span class="dot"></span>
-        }
+            @*@foreach (var item in @Model)
+                {
+                    <div class="mySlides fade">
+                        <a href="@item.URL">
+                            <img src="/Images/Slider/@item.ImageName" title="@item.Title" style="width: 100%; height: 350px; margin-top: 10px; border-radius: 10px; direction: rtl;">
+                        </a>
+                    </div>
+                }
+                @foreach (var item in @Model)
+                {
+                    <span class="dot"></span>
+                }*@
+        </div>
+        <div class="col-md-4">
+            <img src="/Content/img/specialSaleBanner.gif" alt="specialSaleBanner" class="block banner-image" width="100%">
+            <img src="/Content/img/digipayBanner.jpg" alt="specialSaleBanner" class="block banner-image" width="100%">
+        </div>
     </div>
-
 </div>
+

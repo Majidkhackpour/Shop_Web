@@ -1727,3 +1727,135 @@ section form > label input{margin-left: 5px}
 [data-balloon-length="fit"]:after {
   width: 100%;
 }
+.banners {
+    padding: 30px 20px 0 20px;
+}
+
+.banners > .inner-section {
+    max-width: 1336px;
+    min-width: 0;
+}
+.swiper-container {
+    overflow: hidden;
+}
+.block {
+    border-radius: 5px;
+}
+.banners .banner-image {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.swiper-special .swiper-slide-inner {
+    margin-right: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 5px 15px 15px 15px;
+    text-align: left;
+}
+
+.swiper-special .swiper-slide:first-child .swiper-slide-inner {
+    margin-right: 0;
+}
+
+.swiper-special .swiper-slide-inner > .image-container {
+    width: 180px;
+    height: 180px;
+    margin: 5px auto;
+}
+
+.swiper-special .swiper-slide-inner > .title {
+    display: block;
+    text-align: center;
+    color: #535353;
+    font-size: 12px;
+    height: 65px;
+    margin-top: 15px;
+}
+
+.swiper-special .swiper-slide-inner > .price-container {
+    text-align: left;
+}
+
+    .swiper-special .swiper-slide-inner > .price-container > .discount {
+        padding: 4px 6px 1px;
+        background-color: #fb3449;
+        font-size: 16px;
+        color: #fff;
+        border-radius: 20px;
+    }
+
+    .swiper-special .swiper-slide-inner > .price-container > .now-price {
+        font-size: 20px;
+    }
+
+    .swiper-special .swiper-slide-inner > .price-container > .price-unit {
+        font-size: 14px;
+    }
+
+.swiper-special .swiper-button-next, .swiper-special .swiper-button-prev {
+    padding: 50px 30px;
+    background-color: #fff;
+    color: #1b1e21;
+    box-shadow: 1.5px 0 4px 0 rgba(0,0,0,.15);
+    top: calc(50% - 50px);
+}
+
+.swiper-special .swiper-button-next {
+    left: 15px;
+}
+
+.swiper-special .swiper-button-prev {
+    right: 15px;
+}
+
+    .swiper-special .swiper-button-next:after, .swiper-special .swiper-button-prev:after {
+        font-size: 26px !important;
+    }
+
+.swiper-body-part .swiper-slide-inner > .image-container {
+    width: 140px;
+    height: 140px;
+}
+.swiper-pagination {
+    bottom: 20px !important;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    opacity: 1;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.3);
+}
+
+.swiper-pagination-bullet:hover {
+    width: 11px;
+    height: 11px;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #00bfd6;
+}
+.swiper-special .swiper-button-next {
+    left: 15px;
+}
+
+.swiper-special .swiper-button-prev {
+    right: 15px;
+}
+.swiper-special .swiper-button-next:after, .swiper-special .swiper-button-prev:after {
+    font-size: 26px !important;
+}
+.swiper-special .swiper-button-next, .swiper-special .swiper-button-prev {
+    padding: 50px 30px;
+    background-color: #fff;
+    color: #1b1e21;
+    box-shadow: 1.5px 0 4px 0 rgba(0,0,0,.15);
+    top: calc(50% - 50px);
+}
+.banners .swiper-button-next:after, .banners .swiper-button-prev:after {
+    color: #fff;
+    text-shadow: 0 2px 4px #616161;
+}
