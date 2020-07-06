@@ -1,0 +1,61 @@
+﻿@model IEnumerable<EntityCache.WebBussines.WebSlider>
+
+@{
+    ViewBag.Title = "لیست تصاویر اسلایدر";
+}
+
+    <h2>لیست تصاویر اسلایدر</h2>
+
+<p>
+    @Html.ActionLink("افزودن اسلایدر جدید", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img class="thumbnail" src="/Images/Slider/@item.ImageName" style="width: 150px;height: 150px"/>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDateSh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndDateSh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            <a href="@Url.Action("Edit",new {id=@item.Guid})" class="btn btn-warning btn-sm">
+                <i class="glyphicon glyphicon-edit"></i>
+            </a>
+
+            <a href="@Url.Action("Delete",new {id=@item.Guid})" class="btn btn-danger btn-sm">
+                <i class="glyphicon glyphicon-trash"></i>
+            </a>
+        </td>
+    </tr>
+}
+
+</table>

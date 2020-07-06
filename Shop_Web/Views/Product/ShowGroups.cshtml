@@ -7,13 +7,13 @@
             @foreach (var group in Model.Where(q => q.ParentGuid == Guid.Empty).OrderBy(q => q.Name))
             {
                 <li>
-                    <h2><a href="">@group.Name</a></h2>
+                    <h2><a href="/Archive?selectedGroups=@group.Guid">@group.Name</a></h2>
                     @if (Model.Any(q => q.ParentGuid == group.Guid))
                     {
                         <ul class="child-category-menu">
                             @foreach (var sunGroup in Model.Where(q => q.ParentGuid == group.Guid))
                             {
-                                <h2><a href="">@sunGroup.Name</a> <span>(0)</span></h2>
+                                <h2><a href="/Archive?selectedGroups=@sunGroup.Guid">@sunGroup.Name</a> <span>(@sunGroup.CountPrdInGroup)</span></h2>
                             }
                         </ul>
                     }

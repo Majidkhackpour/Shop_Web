@@ -1,4 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Linq;
+using System.Web.Mvc;
+using EntityCache.WebBussines;
 
 namespace Shop_Web.Controllers
 {
@@ -16,7 +19,10 @@ namespace Shop_Web.Controllers
         }
         public ActionResult Slider()
         {
-            return PartialView();
+            var dt = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
+            var all = WebSlider.GetAll().ToList();
+            var list = all.Where(q => q.IsActive).ToList();
+            return PartialView(list);
         }
         public ActionResult WonderLayout()
         {

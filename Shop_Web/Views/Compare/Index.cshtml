@@ -1,0 +1,46 @@
+﻿@model List<EntityCache.ViewModels.CompareItem>
+@{
+    ViewBag.Title = "لیست مقایسه محصولات";
+}
+
+<h2>لیست مقایسه محصولات</h2>
+<hr />
+@if (Model.Any())
+{
+    <table class="table table-bordered">
+        <tr>
+            <td>تصویر</td>
+            @foreach (var irem in Model)
+            {
+                <td>
+                    <img style="width: 100px; height: 100px" class="thumbnail" src="/Images/ProductImages/Thumb/@irem.ImageName" />
+                </td>
+            }
+        </tr>
+
+        <tr>
+            <td>محصول</td>
+            @foreach (var item in Model)
+            {
+                <td>@item.PrdTitle</td>
+            }
+        </tr>
+        @{
+            var list = ViewBag.Features as List<EntityCache.WebBussines.WebFeature>;
+            var listFeatures = ViewBag.prdFetaures as List<EntityCache.Bussines.PrdFeatureBussines>;
+        }
+        @foreach (var item in list)
+        {
+            <tr>
+                <td>@item.Title</td>
+                @foreach (var item1 in Model)
+                {
+                    <td>
+                        @string.Join(" - ", listFeatures.Where(q => q.PrdGuid == item1.PrdGuid&&q.FeatureGuid==item.Guid).Select(q => q.Value).ToList())
+                    </td>
+                }
+            </tr>
+        }
+    </table>
+}
+

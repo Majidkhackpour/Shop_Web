@@ -1,7 +1,20 @@
-﻿
+﻿@model EntityCache.ViewModels.VisiCountViewModel
 @{
     ViewBag.Title = "پنل مدیریت سایت";
 }
 
 <h2>پنل مدیریت سایت</h2>
+
+<div class="thumbnail">
+    <dl class="dl-horizontal">
+        <dt>بازدید امروز :</dt>
+        <dd>@Model.Today</dd>
+        <dt>بازدید دیروز :</dt>
+        <dd>@Model.Yesterday</dd>
+        <dt>بازدید کل :</dt>
+        <dd>@Model.Sum</dd>
+        <dt>افراد آنلاین :</dt>
+        <dd>@Model.Online</dd>
+    </dl>
+</div>
 

@@ -8,11 +8,11 @@
         <h2>
             <a href="/ShowProduct/@Model.Guid">@Model.Name</a>
         </h2>
-        <h6>افزودن به لیست مقایسه <input type="checkbox"></h6>
+        <h6>افزودن به لیست مقایسه <input type="checkbox" onchange="AddToCompare('@Model.Guid')"></h6>
         <span class="col-md-9 col-sm-9 col-xs-9 price-layer">
             <label>@Model.Price.ToString("#,0")  تومان</label>
         </span>
-        <a href="" class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 buy-button border-radius">
+        <a onclick="AddToShopCart('@Model.Guid')" class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 buy-button border-radius">
             <label><i class="fa fa-shopping-basket"></i></label>
         </a>
     </div>

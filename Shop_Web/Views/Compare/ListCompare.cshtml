@@ -1,0 +1,20 @@
+﻿@model List<EntityCache.ViewModels.CompareItem>
+@if (@Model.Any())
+{
+    <section class="border-radius compare-side">
+        <header>
+            <h3> لیست مقایسه </h3></header>
+        <article>
+            <ul>
+                @foreach (var item in @Model)
+                {
+                    <li>
+                        <i class="delete-compare" onclick="DeleteFromCompare('@item.PrdGuid')">X</i>
+                        <a href="">@item.PrdTitle </a>
+                    </li>
+                }
+            </ul>
+            <a href="/Compare" class="show-compare-list border-radius">مشاهده لیست مقایسه</a>
+        </article>
+    </section>
+}

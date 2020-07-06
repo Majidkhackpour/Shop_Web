@@ -10,8 +10,8 @@
     <section class="border-radius">
         <header><h3>فیلترها</h3></header>
         <article class="filter">
-            <form action="/Archive">
-                <input type="hidden" value="@ViewBag.pageId" name="pageId"/>
+            <form action="/Archive" id="filterForm">
+                <input type="hidden" value="@ViewBag.pageId" id="pageId" name="pageId"/>
                 <p>عنوان</p>
                 <p><input type="text" name="title" class="form-control" value="@ViewBag.PrdTitle"/></p>
 
@@ -70,14 +70,20 @@
         <div class="clearfix"></div>
     </article>
 </section>
-@if (ViewBag.PageCount > 0)
+@if (ViewBag.PageCount > 1)
 {
     <div class="pagination-layer">
         <ul class="pagination">
             @for (var i = 1; i <= ViewBag.PageCount; i++)
             {
-                <li><a href="#">@i</a></li>
+                <li><a onclick="pageChange('@i')">@i</a></li>
             }
         </ul>
     </div>
 }
+<script>
+    function pageChange(pageid) {
+        $("#pageId").val(pageid);
+        $("#filterForm").submit();
+    }
+</script>

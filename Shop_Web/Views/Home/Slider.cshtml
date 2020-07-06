@@ -1,5 +1,6 @@
-﻿<div class="slider_layout" style="width: 100%; height: 400px; background-color: white;direction: ltr">
-    
+﻿@model List<EntityCache.WebBussines.WebSlider>
+<div class="slider_layout" style="width: 100%; height: 400px; background-color: white;direction: ltr">
+
     <div class="slider_1" style="background-color: #82c449; width: 35%; height: 170px; position: absolute; border-radius: 10px; margin: 10px">
         <img src="/Content/img/Learn.png" style="width: 100%; height: 100%;  border-radius: 10px;position: absolute">
     </div>
@@ -8,49 +9,18 @@
     </div>
     <div class="slideshow-container">
 
+        @foreach (var item in @Model)
+        {
             <div class="mySlides fade">
-                <div class="numbertext">1 / 6</div>
-                <img src="/Content/img/arad.png" style="width: 100%; height: 350px; margin-top: 10px; border-radius: 10px; direction: rtl;">
-                <div class="text">Caption Text</div>
+                <a href="@item.URL">
+                    <img src="/Images/Slider/@item.ImageName" title="@item.Title" style="width: 100%; height: 350px; margin-top: 10px; border-radius: 10px; direction: rtl;">
+                </a>
             </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext">2 / 6</div>
-                <img src="/Content/img/slider.jpg" style="width: 100%; height: 350px; margin-top: 10px; border-radius: 10px;">
-                <div class="text">Caption Two</div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext">3 / 6</div>
-                <img src="/Content/img/img.jpg" style="width: 100%; height: 350px; margin-top: 10px; border-radius: 10px;">
-                <div class="text">Caption Three</div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext">4 / 6</div>
-                <img src="/Content/img/bg.jpg" style="width: 100%; height: 350px; margin-top: 10px; border-radius: 10px;">
-                <div class="text">Caption Text</div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext">5 / 6</div>
-                <img src="/Content/img/avatar.jpg" style="width: 100%; height: 350px; margin-top: 10px; border-radius: 10px;">
-                <div class="text">Caption Two</div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext">6 / 6</div>
-                <img src="/Content/img/wonder_.png" style="width: 100%; height: 350px; margin-top: 10px; border-radius: 10px;">
-                <div class="text">Caption Three</div>
-            </div>
-            <div style="text-align: center">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-        </div>
+        }
+        @foreach (var item in @Model)
+        {
+            <span class="dot"></span>
+        }
+    </div>
 
 </div>

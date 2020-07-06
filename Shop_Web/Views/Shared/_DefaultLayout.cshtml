@@ -35,7 +35,7 @@
                 <div class="clientarea">
                     <ul>
                         @Html.Partial("_LoginUser")
-                        <li><a href=""><i class="fa fa-shopping-bag"></i> سبد خرید <span>10</span></a></li>
+                        <li><a href=""><i class="fa fa-shopping-bag"></i> سبد خرید <span id="CountShopCart"></span></a></li>
                     </ul>
                 </div>
                 <!-- End Clientarea and Basket -->
@@ -80,10 +80,10 @@
                 <li><a href="/"> صفحه اصلی</a></li>
                 <li><a href="/Archive"> آرشیو محصولات </a></li>
                 @*<li><a href=""> منوی شماره یک </a></li>
-                <li><a href=""> منوی شماره یک </a></li>
-                <li><a href=""> منوی شماره یک </a></li>
-                <li><a href=""> منوی شماره یک </a></li>
-                <li><a href=""> منوی شماره یک </a></li>*@
+                    <li><a href=""> منوی شماره یک </a></li>
+                    <li><a href=""> منوی شماره یک </a></li>
+                    <li><a href=""> منوی شماره یک </a></li>
+                    <li><a href=""> منوی شماره یک </a></li>*@
             </ul>
 
             <!-- Search -->
@@ -130,59 +130,43 @@
 
     <div class="container margin-top-25">
         <aside class="col-md-3 col-sm-4 right-side-content">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div>
+                    <section class="border-radius category-side">
+                        <header><h3>پنل کاربری</h3></header>
+                        <article>
+                            <ul>
+                                <li>
+                                    <a href="/Users/Account/ChangePassword">تغییر کلمه عبور</a>
+                                    <hr/>
+                                </li>
+                                <li>
+                                    <a href="#">نمایش تاریخچه خرید</a>
+                                    <hr />
+                                </li>
+                                <li>
+                                    <a href="/Account/LogOff">خروج از حساب کاربری</a>
+                                </li>
+                            </ul>
+                        </article>
+                    </section>
+                </div>
+            }
             <!-- Basket -->
-            @RenderSection( "Filters",false)
-            <section class="border-radius basket-side">
-                <header><h3> سبد خرید شما  </h3></header>
-                <article>
-                    <ul>
-                        <li>
-                            <img class="border-radius" src="/Content/img/1.jpg">
-                            <div class="left-basket">
-                                <a href="">محصول شماره یک <span class="border-radius"> 2 </span></a>
-                            </div>
-                        </li>
-                        <li>
-                            <img class="border-radius" src="/Content/img/1.jpg">
-                            <div class="left-basket">
-                                <a href="">محصول شماره یک <span class="border-radius"> 2 </span></a>
-                            </div>
-                        </li>
-                        <li>
-                            <img class="border-radius" src="/Content/img/1.jpg">
-                            <div class="left-basket">
-                                <a href="">محصول شماره یک <span class="border-radius"> 2 </span></a>
-                            </div>
-                        </li>
-                    </ul>
-                    <a href="" class="show-basket-button border-radius">مشاهده سبد خرید</a>
-                </article>
-            </section>
+            @RenderSection("Filters", false)
+
+            <div id="showCart">
+                @Html.Action("ShowCart", "ShopCart", new { area = "" })
+            </div>
             <!-- End Basket -->
             <!-- compare -->
-            <section class="border-radius compare-side">
-                <header><h3> لیست مقایسه </h3></header>
-                <article>
-                    <ul>
-                        <li>
-                            <i class="delete-compare">X</i>
-                            <a href="">محصول شماره یک </a>
-                        </li>
-                        <li>
-                            <i class="delete-compare">X</i>
-                            <a href="">محصول شماره یک </a>
-                        </li>
-                        <li>
-                            <i class="delete-compare">X</i>
-                            <a href="">محصول شماره یک </a>
-                        </li>
-                    </ul>
-                    <a href="" class="show-compare-list border-radius">مشاهده لیست مقایسه</a>
-                </article>
-            </section>
+            <div id="compare">
+                @Html.Action("ListCompare", "Compare", new { area = "" })
+            </div>
             <!-- End compare -->
             <!-- Category -->
-            @Html.Action("ShowGroups", "Product", new { area = "" })
+            @Html.Action("ShowGroups", "Product", new {area = ""})
             <!-- End Category -->
             <!-- Category -->
             <!-- End Category -->
@@ -275,5 +259,41 @@
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+    <script>
+        $(function () {
+            countShopCart();
+        });
+
+        function countShopCart() {
+            $.get("/api/Order",
+                function (res) {
+                    $("#CountShopCart").html(res);
+                });
+        }
+        function AddToShopCart(id) {
+            $.get("/api/Order/" + id,
+                function (res) {
+                    $("#CountShopCart").html(res);
+                    UpdateShopCart();
+                });
+        }
+
+        function UpdateShopCart() {
+            $("#showCart").load("/ShopCart/ShowCart").fadeOut(800).fadeIn(800);
+        }
+
+        function AddToCompare(id) {
+            $.get("/Compare/AddToCompare/" + id, function(res) {
+                $("#compare").html(res);
+            });
+        }
+
+        function DeleteFromCompare(id) {
+            $.get("/Compare/DeleteCompare/" + id, function(res) {
+                $("#compare").html(res);
+            });
+        }
+    </script>
 </body>
 </html>

@@ -13,10 +13,10 @@ namespace Shop_Web.Controllers
 {
     public class ProductController : Controller
     {
-
-        public ActionResult ShowGroups()
+        public async Task<ActionResult> ShowGroups()
         {
-            return PartialView(WebProductGroup.GetAll());
+            var list = await WebProductGroup.GetAllAsync();
+            return PartialView(list);
         }
 
         public ActionResult LastView()
@@ -67,7 +67,7 @@ namespace Shop_Web.Controllers
                     Email = webPrd.Email,
                     PrdGuid = webPrd.PrdGuid,
                     Comment = webPrd.Comment,
-                    WebSite = webPrd.WebSite,
+                    WebSite = webPrd.WebSite ?? "",
                     CreateDate = DateTime.Now
                 };
                 if (prd.Guid == Guid.Empty)
@@ -96,7 +96,7 @@ namespace Shop_Web.Controllers
 
             var prdList = WebProduct.GetAll(title, minPrice, maxPrice, selectedGroups);
 
-            var take = 1;
+            var take = 9;
             var skip = (pageId - 1) * take;
             ViewBag.PageCount = prdList.Count() / take;
             return View(prdList.OrderByDescending(q => q.CreateDate).Skip(skip).Take(take).ToList());
