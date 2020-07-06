@@ -1,0 +1,808 @@
+﻿<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="/Assets/bootstrap.min.css">
+    <link rel="stylesheet" href="/Assets/swiper.min.css">
+    <link rel="stylesheet" href="/Content/DidiKalaStyle/icons.css" />
+    <link rel="stylesheet" href="/Content/DidiKalaStyle/style.css" />
+    <script src="/Assets/jquery.min.js"></script>
+    <script src="/Assets/swiper.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="inner-section">
+            <div class="row" style="padding-top: 12px">
+                <div class="col col-9" style="display: flex">
+                    <a href="#" class="main-nav-logo"></a>
+                    <div class="search-box">
+                        <input type="text" name="" id="" placeholder="بگرد ..." />
+                    </div>
+                </div>
+                <div class="col col-3" style="text-align: left">
+                    <button type="button" class="btn btn-outline-secondary">
+                        <span class="login-btn">ورود به حساب کاربری</span>
+                    </button>
+                    <span class="separator"></span>
+                    <button type="button" class="btn btn-light recipe"></button>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 15px">
+                <nav class="col col-9">
+                    <ul class="menu">
+                        <li class="hover">
+                            <div></div>
+                        </li>
+                        <li class="item bars-icon">
+                            دسته‌بندی کالاها
+                            <section class="sub-menu categorization">
+                                <ul class="sub-menu-container">
+                                    <li>
+                                        <span class="menu-icon laptop-b"></span>
+                                        کالای دیجیتال
+                                        <section class="sub-menu-container">
+                                            <div class="row">
+                                                <div class="col-12 padd">
+                                                    <a href="#" class="see-all-cats">همه دسته‌بندی‌های کالای دیجیتال</a>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#" class="see-all-cats">لوازم جانبی گوشی</a><br>
+                                                    <a href="#">کیف و کاور گوشی</a><br>
+                                                    <a href="#">پاور بانک (شارژر همراه)</a><br>
+                                                    <a href="#">پایه نگهدارنده گوشی</a><br>
+                                                    <a href="#" class="see-all-cats">گوشی موبایل</a><br>
+                                                    <a href="#">سامسونگ</a><br>
+                                                    <a href="#">هواوی</a><br>
+                                                    <a href="#">اپل</a><br>
+                                                    <a href="#">شیائومی</a><br>
+                                                    <a href="#">آنر</a><br>
+                                                    <a href="#">نوکیا</a><br>
+                                                    <a href="#" class="see-all-cats">واقعیت مجازی</a><br>
+                                                    <a href="#" class="see-all-cats">مچ‌بند و ساعت هوشمند</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#">شیائومی</a><br>
+                                                    <a href="#">کیف و کاور گوشی</a><br>
+                                                    <a href="#" class="see-all-cats">واقعیت مجازی</a><br>
+                                                    <a href="#" class="see-all-cats">مچ‌بند و ساعت هوشمند</a><br>
+                                                    <a href="#">اپل</a><br>
+                                                    <a href="#">پاور بانک (شارژر همراه)</a><br>
+                                                    <a href="#">پایه نگهدارنده گوشی</a><br>
+                                                    <a href="#">آنر</a><br>
+                                                    <a href="#">نوکیا</a><br>
+                                                    <a href="#">هواوی</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم جانبی گوشی</a><br>
+                                                    <a href="#" class="see-all-cats">گوشی موبایل</a><br>
+                                                    <a href="#">سامسونگ</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#" class="see-all-cats">مچ‌بند و ساعت هوشمند</a><br>
+                                                    <a href="#">کیف و کاور گوشی</a><br>
+                                                    <a href="#" class="see-all-cats">واقعیت مجازی</a><br>
+                                                    <a href="#" class="see-all-cats">گوشی موبایل</a><br>
+                                                    <a href="#">شیائومی</a><br>
+                                                    <a href="#">پاور بانک (شارژر همراه)</a><br>
+                                                    <a href="#">سامسونگ</a><br>
+                                                    <a href="#">اپل</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم جانبی گوشی</a><br>
+                                                    <a href="#">هواوی</a><br>
+                                                    <a href="#">پایه نگهدارنده گوشی</a><br>
+                                                    <a href="#">آنر</a><br>
+                                                    <a href="#">نوکیا</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#" class="see-all-cats">مچ‌بند و ساعت هوشمند</a><br>
+                                                    <a href="#">پایه نگهدارنده گوشی</a><br>
+                                                    <a href="#">سامسونگ</a><br>
+                                                    <a href="#" class="see-all-cats">گوشی موبایل</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم جانبی گوشی</a><br>
+                                                    <a href="#">کیف و کاور گوشی</a><br>
+                                                    <a href="#">آنر</a><br>
+                                                    <a href="#" class="see-all-cats">واقعیت مجازی</a><br>
+                                                    <a href="#">شیائومی</a><br>
+                                                    <a href="#">نوکیا</a><br>
+                                                    <a href="#">هواوی</a><br>
+                                                    <a href="#">اپل</a><br>
+                                                    <a href="#">پاور بانک (شارژر همراه)</a><br>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </li>
+                                    <li>
+                                        <span class="menu-icon heart-b"></span>
+                                        آرایشی، بهداشتی و سلامت
+                                        <section class="sub-menu-container">
+                                            <div class="row">
+                                                <div class="col-12 padd">
+                                                    <a href="#" class="see-all-cats">همه دسته‌بندی‌های آرایشی و بهداشتی</a>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#" class="see-all-cats">لوازم آرایشی</a><br>
+                                                    <a href="#">آرایش چشم و ابرو</a><br>
+                                                    <a href="#">آرایش لب</a><br>
+                                                    <a href="#">آرایش صورت</a><br>
+                                                    <a href="#">مواد آرایش مو</a><br>
+                                                    <a href="#">سنگ پا، بهداشت و زیبایی ناخن</a><br>
+                                                    <a href="#">تجهیزات جانبی آرایشی</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم بهداشتی</a><br>
+                                                    <a href="#">کرم و مراقبت پوست</a><br>
+                                                    <a href="#">شامپو و مراقبت مو</a><br>
+                                                    <a href="#">بهداشت دهان و دندان</a><br>
+                                                    <a href="#">بهداشت و مراقبت بدن</a><br>
+                                                    <a href="#">ضد تعریق</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#" class="see-all-cats">لوازم بهداشتی</a><br>
+                                                    <a href="#">سنگ پا، بهداشت و زیبایی ناخن</a><br>
+                                                    <a href="#">تجهیزات جانبی آرایشی</a><br>
+                                                    <a href="#">شامپو و مراقبت مو</a><br>
+                                                    <a href="#">بهداشت و مراقبت بدن</a><br>
+                                                    <a href="#">آرایش صورت</a><br>
+                                                    <a href="#">بهداشت دهان و دندان</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم آرایشی</a><br>
+                                                    <a href="#">مواد آرایش مو</a><br>
+                                                    <a href="#">ضد تعریق</a><br>
+                                                    <a href="#">آرایش چشم و ابرو</a><br>
+                                                    <a href="#">آرایش لب</a><br>
+                                                    <a href="#">کرم و مراقبت پوست</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#">تجهیزات جانبی آرایشی</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم بهداشتی</a><br>
+                                                    <a href="#">شامپو و مراقبت مو</a><br>
+                                                    <a href="#">آرایش لب</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم آرایشی</a><br>
+                                                    <a href="#">ضد تعریق</a><br>
+                                                    <a href="#">آرایش صورت</a><br>
+                                                    <a href="#">مواد آرایش مو</a><br>
+                                                    <a href="#">آرایش چشم و ابرو</a><br>
+                                                    <a href="#">کرم و مراقبت پوست</a><br>
+                                                    <a href="#">بهداشت و مراقبت بدن</a><br>
+                                                    <a href="#">سنگ پا، بهداشت و زیبایی ناخن</a><br>
+                                                    <a href="#">بهداشت دهان و دندان</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#">تجهیزات جانبی آرایشی</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم بهداشتی</a><br>
+                                                    <a href="#">شامپو و مراقبت مو</a><br>
+                                                    <a href="#">آرایش لب</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم آرایشی</a><br>
+                                                    <a href="#">ضد تعریق</a><br>
+                                                    <a href="#">آرایش صورت</a><br>
+                                                    <a href="#">مواد آرایش مو</a><br>
+                                                    <a href="#">آرایش چشم و ابرو</a><br>
+                                                    <a href="#">کرم و مراقبت پوست</a><br>
+                                                    <a href="#">بهداشت و مراقبت بدن</a><br>
+                                                    <a href="#">سنگ پا، بهداشت و زیبایی ناخن</a><br>
+                                                    <a href="#">بهداشت دهان و دندان</a><br>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </li>
+                                    <li>
+                                        <span class="menu-icon tools-b"></span>
+                                        خودرو، ابزار و اداری
+                                        <section class="sub-menu-container">
+                                            <div class="row">
+                                                <div class="col-12 padd">
+                                                    <a href="#" class="see-all-cats">همه دسته‌بندی‌های وسایل نقلیه و صنعتی</a>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#" class="see-all-cats">خودرو های ایرانی و خارجی</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم جانبی خودرو</a><br>
+                                                    <a href="#">لوازم تزئینی</a><br>
+                                                    <a href="#">سیستم صوتی و تصویری</a><br>
+                                                    <a href="#">دزدگیر، قفل فرمان و پدال</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم مصرفی خودرو</a><br>
+                                                    <a href="#">یدکی، لاستیک، لامپ و چراغ</a><br>
+                                                    <a href="#">مکمل سوخت و روغن</a><br>
+                                                    <a href="#">انواع فیلتر</a><br>
+                                                    <a href="#">روغن موتور و ضد یخ</a><br>
+                                                    <a href="#" class="see-all-cats">موتور سیکلت</a><br>
+                                                    <a href="#" class="see-all-cats">کلاه و لوازم جانبی موتور</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم مصرفی و یدکی موتور</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#">مکمل سوخت و روغن</a><br>
+                                                    <a href="#">سیستم صوتی و تصویری</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم مصرفی خودرو</a><br>
+                                                    <a href="#">دزدگیر، قفل فرمان و پدال</a><br>
+                                                    <a href="#">لوازم تزئینی</a><br>
+                                                    <a href="#" class="see-all-cats">خودرو های ایرانی و خارجی</a><br>
+                                                    <a href="#" class="see-all-cats">کلاه و لوازم جانبی موتور</a><br>
+                                                    <a href="#" class="see-all-cats">موتور سیکلت</a><br>
+                                                    <a href="#">انواع فیلتر</a><br>
+                                                    <a href="#">روغن موتور و ضد یخ</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم جانبی خودرو</a><br>
+                                                    <a href="#">یدکی، لاستیک، لامپ و چراغ</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم مصرفی و یدکی موتور</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#" class="see-all-cats">لوازم جانبی خودرو</a><br>
+                                                    <a href="#">دزدگیر، قفل فرمان و پدال</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم مصرفی خودرو</a><br>
+                                                    <a href="#">مکمل سوخت و روغن</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم مصرفی و یدکی موتور</a><br>
+                                                    <a href="#" class="see-all-cats">خودرو های ایرانی و خارجی</a><br>
+                                                    <a href="#" class="see-all-cats">موتور سیکلت</a><br>
+                                                    <a href="#">لوازم تزئینی</a><br>
+                                                    <a href="#">روغن موتور و ضد یخ</a><br>
+                                                    <a href="#">یدکی، لاستیک، لامپ و چراغ</a><br>
+                                                    <a href="#">انواع فیلتر</a><br>
+                                                    <a href="#" class="see-all-cats">کلاه و لوازم جانبی موتور</a><br>
+                                                    <a href="#">سیستم صوتی و تصویری</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#" class="see-all-cats">خودرو های ایرانی و خارجی</a><br>
+                                                    <a href="#" class="see-all-cats">موتور سیکلت</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم جانبی خودرو</a><br>
+                                                    <a href="#">سیستم صوتی و تصویری</a><br>
+                                                    <a href="#">یدکی، لاستیک، لامپ و چراغ</a><br>
+                                                    <a href="#">انواع فیلتر</a><br>
+                                                    <a href="#" class="see-all-cats">کلاه و لوازم جانبی موتور</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم مصرفی خودرو</a><br>
+                                                    <a href="#">لوازم تزئینی</a><br>
+                                                    <a href="#">مکمل سوخت و روغن</a><br>
+                                                    <a href="#">دزدگیر، قفل فرمان و پدال</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم مصرفی و یدکی موتور</a><br>
+                                                    <a href="#">روغن موتور و ضد یخ</a><br>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </li>
+                                    <li>
+                                        <span class="menu-icon tools-b"></span>
+                                        مد و پوشاک
+                                        <section class="sub-menu-container">
+                                            <div class="row">
+                                                <div class="col-12 padd">
+                                                    <a href="#" class="see-all-cats">همه دسته‌بندی های مد و پوشاک</a>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#" class="see-all-cats">مردانه</a><br>
+                                                    <a href="#" class="see-all-cats">لباس مردانه</a><br>
+                                                    <a href="#">تی شرت و پولو شرت</a><br>
+                                                    <a href="#">پیراهن</a><br>
+                                                    <a href="#">شلوار</a><br>
+                                                    <a href="#">لباس زیر</a><br>
+                                                    <a href="#" class="see-all-cats">کفش مردانه</a><br>
+                                                    <a href="#">کفش روزمره</a><br>
+                                                    <a href="#">کفش رسمی</a><br>
+                                                    <a href="#" class="see-all-cats">اکسسوری مردانه</a><br>
+                                                    <a href="#">ساعت</a><br>
+                                                    <a href="#">کیف</a><br>
+                                                    <a href="#">کمربند</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#">پیراهن</a><br>
+                                                    <a href="#">کیف</a><br>
+                                                    <a href="#" class="see-all-cats">مردانه</a><br>
+                                                    <a href="#">کمربند</a><br>
+                                                    <a href="#">کفش رسمی</a><br>
+                                                    <a href="#" class="see-all-cats">لباس مردانه</a><br>
+                                                    <a href="#">لباس زیر</a><br>
+                                                    <a href="#">ساعت</a><br>
+                                                    <a href="#">شلوار</a><br>
+                                                    <a href="#" class="see-all-cats">کفش مردانه</a><br>
+                                                    <a href="#">تی شرت و پولو شرت</a><br>
+                                                    <a href="#" class="see-all-cats">اکسسوری مردانه</a><br>
+                                                    <a href="#">کفش روزمره</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#">کیف</a><br>
+                                                    <a href="#">ساعت</a><br>
+                                                    <a href="#">کمربند</a><br>
+                                                    <a href="#">کفش روزمره</a><br>
+                                                    <a href="#" class="see-all-cats">لباس مردانه</a><br>
+                                                    <a href="#">لباس زیر</a><br>
+                                                    <a href="#">تی شرت و پولو شرت</a><br>
+                                                    <a href="#" class="see-all-cats">اکسسوری مردانه</a><br>
+                                                    <a href="#" class="see-all-cats">مردانه</a><br>
+                                                    <a href="#">پیراهن</a><br>
+                                                    <a href="#" class="see-all-cats">کفش مردانه</a><br>
+                                                    <a href="#">شلوار</a><br>
+                                                    <a href="#">کفش رسمی</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#">کفش رسمی</a><br>
+                                                    <a href="#">کفش روزمره</a><br>
+                                                    <a href="#" class="see-all-cats">کفش مردانه</a><br>
+                                                    <a href="#">کمربند</a><br>
+                                                    <a href="#" class="see-all-cats">اکسسوری مردانه</a><br>
+                                                    <a href="#">تی شرت و پولو شرت</a><br>
+                                                    <a href="#" class="see-all-cats">مردانه</a><br>
+                                                    <a href="#">لباس زیر</a><br>
+                                                    <a href="#">کیف</a><br>
+                                                    <a href="#">شلوار</a><br>
+                                                    <a href="#">پیراهن</a><br>
+                                                    <a href="#" class="see-all-cats">لباس مردانه</a><br>
+                                                    <a href="#">ساعت</a><br>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </li>
+                                    <li>
+                                        <span class="menu-icon sofa-b"></span>
+                                        خانه و آشپزخانه
+                                        <section class="sub-menu-container">
+                                            <div class="row">
+                                                <div class="col-12 padd">
+                                                    <a href="#" class="see-all-cats">همه دسته‌بندی های خانه و آشپزخانه</a>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#" class="see-all-cats">مردانه</a><br>
+                                                    <a href="#" class="see-all-cats">لباس مردانه</a><br>
+                                                    <a href="#">تی شرت و پولو شرت</a><br>
+                                                    <a href="#">پیراهن</a><br>
+                                                    <a href="#">شلوار</a><br>
+                                                    <a href="#">لباس زیر</a><br>
+                                                    <a href="#" class="see-all-cats">کفش مردانه</a><br>
+                                                    <a href="#">کفش روزمره</a><br>
+                                                    <a href="#">کفش رسمی</a><br>
+                                                    <a href="#" class="see-all-cats">اکسسوری مردانه</a><br>
+                                                    <a href="#">ساعت</a><br>
+                                                    <a href="#">کیف</a><br>
+                                                    <a href="#">کمربند</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#">پیراهن</a><br>
+                                                    <a href="#">کیف</a><br>
+                                                    <a href="#" class="see-all-cats">مردانه</a><br>
+                                                    <a href="#">کمربند</a><br>
+                                                    <a href="#">کفش رسمی</a><br>
+                                                    <a href="#" class="see-all-cats">لباس مردانه</a><br>
+                                                    <a href="#">لباس زیر</a><br>
+                                                    <a href="#">ساعت</a><br>
+                                                    <a href="#">شلوار</a><br>
+                                                    <a href="#" class="see-all-cats">کفش مردانه</a><br>
+                                                    <a href="#">تی شرت و پولو شرت</a><br>
+                                                    <a href="#" class="see-all-cats">اکسسوری مردانه</a><br>
+                                                    <a href="#">کفش روزمره</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#">کیف</a><br>
+                                                    <a href="#">ساعت</a><br>
+                                                    <a href="#">کمربند</a><br>
+                                                    <a href="#">کفش روزمره</a><br>
+                                                    <a href="#" class="see-all-cats">لباس مردانه</a><br>
+                                                    <a href="#">لباس زیر</a><br>
+                                                    <a href="#">تی شرت و پولو شرت</a><br>
+                                                    <a href="#" class="see-all-cats">اکسسوری مردانه</a><br>
+                                                    <a href="#" class="see-all-cats">مردانه</a><br>
+                                                    <a href="#">پیراهن</a><br>
+                                                    <a href="#" class="see-all-cats">کفش مردانه</a><br>
+                                                    <a href="#">شلوار</a><br>
+                                                    <a href="#">کفش رسمی</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#">کفش رسمی</a><br>
+                                                    <a href="#">کفش روزمره</a><br>
+                                                    <a href="#" class="see-all-cats">کفش مردانه</a><br>
+                                                    <a href="#">کمربند</a><br>
+                                                    <a href="#" class="see-all-cats">اکسسوری مردانه</a><br>
+                                                    <a href="#">تی شرت و پولو شرت</a><br>
+                                                    <a href="#" class="see-all-cats">مردانه</a><br>
+                                                    <a href="#">لباس زیر</a><br>
+                                                    <a href="#">کیف</a><br>
+                                                    <a href="#">شلوار</a><br>
+                                                    <a href="#">پیراهن</a><br>
+                                                    <a href="#" class="see-all-cats">لباس مردانه</a><br>
+                                                    <a href="#">ساعت</a><br>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </li>
+                                    <li>
+                                        <span class="menu-icon book-b"></span>
+                                        کتاب، لوازم تحریر و هنر
+                                        <section class="sub-menu-container">
+                                            <div class="row">
+                                                <div class="col-12 padd">
+                                                    <a href="#" class="see-all-cats">همه دسته‌بندی‌های کتاب، لوازم تحریر و هنر</a>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#" class="see-all-cats">خودرو های ایرانی و خارجی</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم جانبی خودرو</a><br>
+                                                    <a href="#">لوازم تزئینی</a><br>
+                                                    <a href="#">سیستم صوتی و تصویری</a><br>
+                                                    <a href="#">دزدگیر، قفل فرمان و پدال</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم مصرفی خودرو</a><br>
+                                                    <a href="#">یدکی، لاستیک، لامپ و چراغ</a><br>
+                                                    <a href="#">مکمل سوخت و روغن</a><br>
+                                                    <a href="#">انواع فیلتر</a><br>
+                                                    <a href="#">روغن موتور و ضد یخ</a><br>
+                                                    <a href="#" class="see-all-cats">موتور سیکلت</a><br>
+                                                    <a href="#" class="see-all-cats">کلاه و لوازم جانبی موتور</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم مصرفی و یدکی موتور</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#">مکمل سوخت و روغن</a><br>
+                                                    <a href="#">سیستم صوتی و تصویری</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم مصرفی خودرو</a><br>
+                                                    <a href="#">دزدگیر، قفل فرمان و پدال</a><br>
+                                                    <a href="#">لوازم تزئینی</a><br>
+                                                    <a href="#" class="see-all-cats">خودرو های ایرانی و خارجی</a><br>
+                                                    <a href="#" class="see-all-cats">کلاه و لوازم جانبی موتور</a><br>
+                                                    <a href="#" class="see-all-cats">موتور سیکلت</a><br>
+                                                    <a href="#">انواع فیلتر</a><br>
+                                                    <a href="#">روغن موتور و ضد یخ</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم جانبی خودرو</a><br>
+                                                    <a href="#">یدکی، لاستیک، لامپ و چراغ</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم مصرفی و یدکی موتور</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#" class="see-all-cats">لوازم جانبی خودرو</a><br>
+                                                    <a href="#">دزدگیر، قفل فرمان و پدال</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم مصرفی خودرو</a><br>
+                                                    <a href="#">مکمل سوخت و روغن</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم مصرفی و یدکی موتور</a><br>
+                                                    <a href="#" class="see-all-cats">خودرو های ایرانی و خارجی</a><br>
+                                                    <a href="#" class="see-all-cats">موتور سیکلت</a><br>
+                                                    <a href="#">لوازم تزئینی</a><br>
+                                                    <a href="#">روغن موتور و ضد یخ</a><br>
+                                                    <a href="#">یدکی، لاستیک، لامپ و چراغ</a><br>
+                                                    <a href="#">انواع فیلتر</a><br>
+                                                    <a href="#" class="see-all-cats">کلاه و لوازم جانبی موتور</a><br>
+                                                    <a href="#">سیستم صوتی و تصویری</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#" class="see-all-cats">خودرو های ایرانی و خارجی</a><br>
+                                                    <a href="#" class="see-all-cats">موتور سیکلت</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم جانبی خودرو</a><br>
+                                                    <a href="#">سیستم صوتی و تصویری</a><br>
+                                                    <a href="#">یدکی، لاستیک، لامپ و چراغ</a><br>
+                                                    <a href="#">انواع فیلتر</a><br>
+                                                    <a href="#" class="see-all-cats">کلاه و لوازم جانبی موتور</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم مصرفی خودرو</a><br>
+                                                    <a href="#">لوازم تزئینی</a><br>
+                                                    <a href="#">مکمل سوخت و روغن</a><br>
+                                                    <a href="#">دزدگیر، قفل فرمان و پدال</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم مصرفی و یدکی موتور</a><br>
+                                                    <a href="#">روغن موتور و ضد یخ</a><br>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </li>
+                                    <li>
+                                        <span class="menu-icon baby-b"></span>
+                                        اسباب‌بازی، کودک و نوزاد
+                                        <section class="sub-menu-container">
+                                            <div class="row">
+                                                <div class="col-12 padd">
+                                                    <a href="#" class="see-all-cats">همه دسته‌بندی‌های اسباب بازی و کودک</a>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#" class="see-all-cats">لوازم جانبی گوشی</a><br>
+                                                    <a href="#">کیف و کاور گوشی</a><br>
+                                                    <a href="#">پاور بانک (شارژر همراه)</a><br>
+                                                    <a href="#">پایه نگهدارنده گوشی</a><br>
+                                                    <a href="#" class="see-all-cats">گوشی موبایل</a><br>
+                                                    <a href="#">سامسونگ</a><br>
+                                                    <a href="#">هواوی</a><br>
+                                                    <a href="#">اپل</a><br>
+                                                    <a href="#">شیائومی</a><br>
+                                                    <a href="#">آنر</a><br>
+                                                    <a href="#">نوکیا</a><br>
+                                                    <a href="#" class="see-all-cats">واقعیت مجازی</a><br>
+                                                    <a href="#" class="see-all-cats">مچ‌بند و ساعت هوشمند</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#">شیائومی</a><br>
+                                                    <a href="#">کیف و کاور گوشی</a><br>
+                                                    <a href="#" class="see-all-cats">واقعیت مجازی</a><br>
+                                                    <a href="#" class="see-all-cats">مچ‌بند و ساعت هوشمند</a><br>
+                                                    <a href="#">اپل</a><br>
+                                                    <a href="#">پاور بانک (شارژر همراه)</a><br>
+                                                    <a href="#">پایه نگهدارنده گوشی</a><br>
+                                                    <a href="#">آنر</a><br>
+                                                    <a href="#">نوکیا</a><br>
+                                                    <a href="#">هواوی</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم جانبی گوشی</a><br>
+                                                    <a href="#" class="see-all-cats">گوشی موبایل</a><br>
+                                                    <a href="#">سامسونگ</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#" class="see-all-cats">مچ‌بند و ساعت هوشمند</a><br>
+                                                    <a href="#">کیف و کاور گوشی</a><br>
+                                                    <a href="#" class="see-all-cats">واقعیت مجازی</a><br>
+                                                    <a href="#" class="see-all-cats">گوشی موبایل</a><br>
+                                                    <a href="#">شیائومی</a><br>
+                                                    <a href="#">پاور بانک (شارژر همراه)</a><br>
+                                                    <a href="#">سامسونگ</a><br>
+                                                    <a href="#">اپل</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم جانبی گوشی</a><br>
+                                                    <a href="#">هواوی</a><br>
+                                                    <a href="#">پایه نگهدارنده گوشی</a><br>
+                                                    <a href="#">آنر</a><br>
+                                                    <a href="#">نوکیا</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#" class="see-all-cats">مچ‌بند و ساعت هوشمند</a><br>
+                                                    <a href="#">پایه نگهدارنده گوشی</a><br>
+                                                    <a href="#">سامسونگ</a><br>
+                                                    <a href="#" class="see-all-cats">گوشی موبایل</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم جانبی گوشی</a><br>
+                                                    <a href="#">کیف و کاور گوشی</a><br>
+                                                    <a href="#">آنر</a><br>
+                                                    <a href="#" class="see-all-cats">واقعیت مجازی</a><br>
+                                                    <a href="#">شیائومی</a><br>
+                                                    <a href="#">نوکیا</a><br>
+                                                    <a href="#">هواوی</a><br>
+                                                    <a href="#">اپل</a><br>
+                                                    <a href="#">پاور بانک (شارژر همراه)</a><br>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </li>
+                                    <li>
+                                        <span class="menu-icon sports-b"></span>
+                                        ورزش و سفر
+                                        <section class="sub-menu-container">
+                                            <div class="row">
+                                                <div class="col-12 padd">
+                                                    <a href="#" class="see-all-cats">همه دسته‌بندی‌های ورزش و سفر</a>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#" class="see-all-cats">لوازم آرایشی</a><br>
+                                                    <a href="#">آرایش چشم و ابرو</a><br>
+                                                    <a href="#">آرایش لب</a><br>
+                                                    <a href="#">آرایش صورت</a><br>
+                                                    <a href="#">مواد آرایش مو</a><br>
+                                                    <a href="#">سنگ پا، بهداشت و زیبایی ناخن</a><br>
+                                                    <a href="#">تجهیزات جانبی آرایشی</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم بهداشتی</a><br>
+                                                    <a href="#">کرم و مراقبت پوست</a><br>
+                                                    <a href="#">شامپو و مراقبت مو</a><br>
+                                                    <a href="#">بهداشت دهان و دندان</a><br>
+                                                    <a href="#">بهداشت و مراقبت بدن</a><br>
+                                                    <a href="#">ضد تعریق</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#" class="see-all-cats">لوازم بهداشتی</a><br>
+                                                    <a href="#">سنگ پا، بهداشت و زیبایی ناخن</a><br>
+                                                    <a href="#">تجهیزات جانبی آرایشی</a><br>
+                                                    <a href="#">شامپو و مراقبت مو</a><br>
+                                                    <a href="#">بهداشت و مراقبت بدن</a><br>
+                                                    <a href="#">آرایش صورت</a><br>
+                                                    <a href="#">بهداشت دهان و دندان</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم آرایشی</a><br>
+                                                    <a href="#">مواد آرایش مو</a><br>
+                                                    <a href="#">ضد تعریق</a><br>
+                                                    <a href="#">آرایش چشم و ابرو</a><br>
+                                                    <a href="#">آرایش لب</a><br>
+                                                    <a href="#">کرم و مراقبت پوست</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#">تجهیزات جانبی آرایشی</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم بهداشتی</a><br>
+                                                    <a href="#">شامپو و مراقبت مو</a><br>
+                                                    <a href="#">آرایش لب</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم آرایشی</a><br>
+                                                    <a href="#">ضد تعریق</a><br>
+                                                    <a href="#">آرایش صورت</a><br>
+                                                    <a href="#">مواد آرایش مو</a><br>
+                                                    <a href="#">آرایش چشم و ابرو</a><br>
+                                                    <a href="#">کرم و مراقبت پوست</a><br>
+                                                    <a href="#">بهداشت و مراقبت بدن</a><br>
+                                                    <a href="#">سنگ پا، بهداشت و زیبایی ناخن</a><br>
+                                                    <a href="#">بهداشت دهان و دندان</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#">تجهیزات جانبی آرایشی</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم بهداشتی</a><br>
+                                                    <a href="#">شامپو و مراقبت مو</a><br>
+                                                    <a href="#">آرایش لب</a><br>
+                                                    <a href="#" class="see-all-cats">لوازم آرایشی</a><br>
+                                                    <a href="#">ضد تعریق</a><br>
+                                                    <a href="#">آرایش صورت</a><br>
+                                                    <a href="#">مواد آرایش مو</a><br>
+                                                    <a href="#">آرایش چشم و ابرو</a><br>
+                                                    <a href="#">کرم و مراقبت پوست</a><br>
+                                                    <a href="#">بهداشت و مراقبت بدن</a><br>
+                                                    <a href="#">سنگ پا، بهداشت و زیبایی ناخن</a><br>
+                                                    <a href="#">بهداشت دهان و دندان</a><br>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </li>
+                                    <li>
+                                        <span class="menu-icon food-b"></span>
+                                        خوردنی و آشامیدنی
+                                        <section class="sub-menu-container">
+                                            <div class="row">
+                                                <div class="col-12 padd">
+                                                    <a href="#" class="see-all-cats">همه دسته‌بندی های خوردنی و آشامیدنی</a>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#" class="see-all-cats">مردانه</a><br>
+                                                    <a href="#" class="see-all-cats">لباس مردانه</a><br>
+                                                    <a href="#">تی شرت و پولو شرت</a><br>
+                                                    <a href="#">پیراهن</a><br>
+                                                    <a href="#">شلوار</a><br>
+                                                    <a href="#">لباس زیر</a><br>
+                                                    <a href="#" class="see-all-cats">کفش مردانه</a><br>
+                                                    <a href="#">کفش روزمره</a><br>
+                                                    <a href="#">کفش رسمی</a><br>
+                                                    <a href="#" class="see-all-cats">اکسسوری مردانه</a><br>
+                                                    <a href="#">ساعت</a><br>
+                                                    <a href="#">کیف</a><br>
+                                                    <a href="#">کمربند</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#">پیراهن</a><br>
+                                                    <a href="#">کیف</a><br>
+                                                    <a href="#" class="see-all-cats">مردانه</a><br>
+                                                    <a href="#">کمربند</a><br>
+                                                    <a href="#">کفش رسمی</a><br>
+                                                    <a href="#" class="see-all-cats">لباس مردانه</a><br>
+                                                    <a href="#">لباس زیر</a><br>
+                                                    <a href="#">ساعت</a><br>
+                                                    <a href="#">شلوار</a><br>
+                                                    <a href="#" class="see-all-cats">کفش مردانه</a><br>
+                                                    <a href="#">تی شرت و پولو شرت</a><br>
+                                                    <a href="#" class="see-all-cats">اکسسوری مردانه</a><br>
+                                                    <a href="#">کفش روزمره</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#">کیف</a><br>
+                                                    <a href="#">ساعت</a><br>
+                                                    <a href="#">کمربند</a><br>
+                                                    <a href="#">کفش روزمره</a><br>
+                                                    <a href="#" class="see-all-cats">لباس مردانه</a><br>
+                                                    <a href="#">لباس زیر</a><br>
+                                                    <a href="#">تی شرت و پولو شرت</a><br>
+                                                    <a href="#" class="see-all-cats">اکسسوری مردانه</a><br>
+                                                    <a href="#" class="see-all-cats">مردانه</a><br>
+                                                    <a href="#">پیراهن</a><br>
+                                                    <a href="#" class="see-all-cats">کفش مردانه</a><br>
+                                                    <a href="#">شلوار</a><br>
+                                                    <a href="#">کفش رسمی</a><br>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#">کفش رسمی</a><br>
+                                                    <a href="#">کفش روزمره</a><br>
+                                                    <a href="#" class="see-all-cats">کفش مردانه</a><br>
+                                                    <a href="#">کمربند</a><br>
+                                                    <a href="#" class="see-all-cats">اکسسوری مردانه</a><br>
+                                                    <a href="#">تی شرت و پولو شرت</a><br>
+                                                    <a href="#" class="see-all-cats">مردانه</a><br>
+                                                    <a href="#">لباس زیر</a><br>
+                                                    <a href="#">کیف</a><br>
+                                                    <a href="#">شلوار</a><br>
+                                                    <a href="#">پیراهن</a><br>
+                                                    <a href="#" class="see-all-cats">لباس مردانه</a><br>
+                                                    <a href="#">ساعت</a><br>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </li>
+                                </ul>
+                            </section>
+                        </li>
+                        <li class="item bucket-icon">سوپرمارکت</li>
+                        <li class="item discount-icon">
+                            تخفیف‌ها و پیشنهاد‌ها
+                            <section class="sub-menu">
+                                <div class="row">
+                                    <div class="col col-12 padd">
+                                        <a href="#" class="see-all-cats">مشاهده همه تخفیف ها و پیشنهاد ها</a>
+                                    </div>
+                                    <div class="col col-3">
+                                        <a href="#" class="see-all-cats">کالا های شگفت انگیز</a><br>
+                                        <a href="#" class="see-all-cats">شگفت انگیز سوپرمارکتی</a><br>
+                                        <a href="#" class="see-all-cats">فروش ویژه</a>
+                                        <div class="padd">
+                                            <a href="#"> کالای دیجیتال</a><br>
+                                            <a href="#">آرایشی، بهداشتی و سلامت</a><br>
+                                            <a href="#">خودرو، ابزار و اداری</a><br>
+                                            <a href="#">مد و پوشاک</a><br>
+                                            <a href="#">خانه و آشپزخانه</a><br>
+                                            <a href="#">کتاب، لوازم تحریر و هنر</a><br>
+                                            <a href="#">اسباب بازی، کودک و نوزاد</a><br>
+                                            <a href="#">ورزش و سفر</a><br>
+                                            <a href="#">خوردنی و آشامیدنی</a><br>
+                                        </div>
+                                    </div>
+                                    <div class="col col-4">
+                                        <ul>
+                                            <li><a href="#">ابزار دستی کمتر از ۱۰۰ هزار تومان</a></li>
+                                            <li><a href="#"> شمش و پلاک طلا و نقره کمتر از ۳۰۰ هزار تومان</a></li>
+                                        </ul>
+                                        <hr>
+                                        <a href="#"><span class="list-icon gift-b"></span> با هر خرید هدیه بگیرید</a>
+                                        <a href="#"><span class="list-icon discount-tag-b"></span>تخفیف پایان فصل</a>
+                                        <a href="#">
+                                            <span class="list-icon gift-card-b"></span>کارت هدیه خرید از
+                                            دیجی‌کالا
+                                        </a>
+                                        <a href="#"><span class="list-icon new-prod-b"></span>تازه‌های فروشنده‌های جدید</a>
+                                    </div>
+                                    <div class="col col-5">
+                                        <img src="images/special_suggestions.jpg" alt="special suggestions banner"
+                                             class="block menu-image">
+                                    </div>
+                                </div>
+                            </section>
+                        </li>
+                        <li class="item certified-icon">دیجی‌کالای من</li>
+                        <li class="item chain-icon">
+                            دیجی‌کلاب
+                            <section class="sub-menu">
+                                <div class="row">
+                                    <div class="col col-6">
+                                        <img src="/Content/img/digiclub_logo.svg" width="101" style="display: block">
+                                        <div class="padd">
+                                            <a href="#" class="see-all-cats">صفحه اصلی دیجی‌کلاب</a><br>
+                                            <a href="#"><span class="list-icon rewards-b"></span> جوایز دیجی‌کلاب</a><br>
+                                            <a href="#">
+                                                <span class="list-icon clock-b"></span>تاریخجه امتیازات
+                                                دیجی‌کلاب
+                                            </a><br>
+                                        </div>
+                                    </div>
+                                    <div class="col col-6">
+                                        <img src="/Content/img/digiclub_banner.jpg" class="block menu-image" />
+                                    </div>
+                                </div>
+                            </section>
+                        </li>
+                        <li class="item">سوالی دارید؟</li>
+                        <li class="item">فروشنده شوید</li>
+                    </ul>
+                </nav>
+                <div style="text-align: left;" class="col col-3">
+                    <span class="text-subtitle location-icon">
+                        لطفا شهر و استان خود را انتخاب کنید
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<div class="banners">
+    <div class="inner-section row">
+        <div class="col-8">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="/Content/img/banner1.jpg" alt="banner" class="block banner-image">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/Content/img/banner2.jpg" alt="banner" class="block banner-image">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/Content/img/banner3.jpg" alt="banner" class="block banner-image">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/Content/img/banner4.jpg" alt="banner" class="block banner-image">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/Content/img/banner5.jpg" alt="banner" class="block banner-image">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/Content/img/banner6.jpg" alt="banner" class="block banner-image">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/Content/img/banner7.jpg" alt="banner" class="block banner-image">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+        <div class="col-4">
+            <img src="/Content/img/specialSaleBanner.gif" alt="specialSaleBanner" class="block banner-image">
+            <img src="/Content/img/digipayBanner.jpg" alt="specialSaleBanner" class="block banner-image">
+        </div>
+    </div>
+</div>
+<div style="background-color: #ef394e; height: 400px; "></div>
+
+
+
+    @RenderBody()
+    <script src="/Content/DidiKalaStyle/script.js"></script>
+</body>
+</html>
